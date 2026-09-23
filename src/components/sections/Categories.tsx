@@ -1,7 +1,7 @@
 import { useReveal } from '../../hooks/useReveal.ts';
 import categories from '../../data/categories.ts';
 
-import styles from './Categories.module.css';
+import styles from './categories.module.css';
 import { Link } from 'react-router-dom';
 
 export default function Categories() {
