@@ -28,7 +28,7 @@ export default function Gallery({ models = [] }: GalleryProps) {
 
         <div className={styles.grid}>
           {mainModels.map((model: IModel) => (
-            <ModelCard model={model} />
+            <ModelCard key={model.name} model={model} />
           ))}
         </div>
       </div>
