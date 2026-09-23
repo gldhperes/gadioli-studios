@@ -1,0 +1,51 @@
+.section {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  background:  var(--primary);
+}
+
+@media (min-width: 768px) {
+  .section { padding-top: 7rem; padding-bottom: 7rem; }
+}
+
+.inner {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color:  var(--primary-foreground);
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .title { font-size: 3rem; }
+}
+
+.button {
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background:  var(--background);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color:  var(--foreground);
+  transition: all 300ms;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background:  var(--accent);
+  color:  var(--accent-foreground);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,126 @@
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--secondary) / 0.4;
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+  padding-top: 4rem;
+}
+
+.topRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .topRow {
+    flex-direction: row;
+  }
+}
+
+.brand {
+  max-width: 20rem;
+}
+
+.brandTitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.brandAccent {
+  color: var(--accent);
+}
+
+.brandText {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  line-height: 1.625;
+}
+
+.navCol,
+.contactCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.colLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.navLink {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  transition: color 200ms;
+}
+
+.navLink:hover {
+  color: var(--accent);
+}
+
+.contactText {
+  font-size: 0.875rem;
+  color: var(--foreground);
+}
+
+.contactSub {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.instagramLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  transition: color 200ms;
+  margin-top: 0.25rem;
+}
+
+.instagramLink:hover {
+  color: var(--accent);
+}
+
+.bottomRow {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border) / 0.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .bottomRow {
+    flex-direction: row;
+  }
+}
+
+.copyright,
+.madeWith {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+
+.madeBy{
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: black;
+}

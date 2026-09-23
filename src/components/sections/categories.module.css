@@ -1,0 +1,129 @@
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section { padding-top: 7rem; padding-bottom: 7rem; }
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .header { flex-direction: row; align-items: flex-end; }
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+.title {
+  margin-top: 0.75rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--foreground);
+  max-width: 32rem;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .title { font-size: 3rem; }
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  max-width: 20rem;
+  line-height: 1.625;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+}
+
+.card {
+  display: flex;
+  flex-flow: column;
+  /* justify-content: ; */
+  padding: 1.25rem;
+
+
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0.5rem;
+
+  transition: all 300ms;
+}
+
+@media (min-width: 768px) {
+  .card { padding: 1.5rem; }
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  transform: translateY(-0.25rem);
+}
+
+.icon {
+  color: var(--foreground);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .icon { margin-bottom: 3rem; }
+}
+
+.cardTitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+@media (min-width: 768px) {
+  .cardTitle { font-size: 1.5rem; }
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+}
+
+.count {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.viewLink {
+  font-size: 0.75rem;
+  color: var(--foreground);
+  transition: color 200ms;
+}
+
+.card:hover .viewLink { color: var(--accent); }

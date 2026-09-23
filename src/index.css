@@ -1,0 +1,188 @@
+/* =================================================================
+   GADIOLO STUDIO — Folha de Estilos Global
+   =================================================================
+   Este arquivo é a fonte única de verdade para:
+     1. Tokens de design (variáveis CSS em :root)
+     2. Estilos base de elementos (body, headings) — em CSS puro
+     3. Classes utilitárias globais (reveal, scrollbar-hide, etc.) — em CSS puro
+
+   OBS: As diretivas @tailwind abaixo são exigidas pelo sistema de build
+   da plataforma Base44 (não podem ser removidas). Elas garantem que os
+   componentes shadcn/ui (em src/components/ui/*) continuem funcionando.
+   Todo o CSS customizado deste arquivo, porém, é CSS PURO — sem @apply,
+   sem @layer — para facilitar leitura e manutenção.
+
+   Os estilos de cada componente vivem em seus respectivos .module.css
+   e consomem estes tokens via var(--token)).
+   ================================================================= */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =================================================================
+   1. TOKENS DE DESIGN (Variáveis CSS)
+   =================================================================
+   Consumidos por todos os arquivos .module.css usando o padrão:
+     var(--nome-do-token))
+   ou com opacidade:
+     var(--nome-do-token) / 0.8)
+
+   As cores são armazenadas como canais HSL (ex: "40 33% 98%") para
+   permitir modificadores de opacidade sem converter formato.
+   ================================================================= */
+
+:root {
+  /* --- Superfícies --- */
+  --background: #FBFAF7;
+  --foreground: #14161A;
+
+  /* --- Cartões & Popovers --- */
+  --card: #FFFFFF;
+  --card-foreground: #14161A;
+  --popover: #FFFFFF;
+  --popover-foreground: #14161A;
+
+  /* --- Marca --- */
+  --primary: #14161A;
+  --primary-foreground: #FBFAF7;
+
+  --secondary: #F0ECE5;
+  --secondary-foreground: #14161A;
+
+  --muted: #F1EEE9;
+  --muted-foreground: #5C6777;
+
+  --accent: #91543B;
+  --accent-foreground: #FBFAF7;
+
+  /* --- Destrutivo --- */
+  --destructive: #DC2828;
+  --destructive-foreground: #FBFAF7;
+
+  /* --- Borda, Input & Focus Ring --- */
+  --border: #E7E2DA;
+  --input: #E7E2DA;
+  --ring: #91543B;
+
+  /* --- Cores de Gráfico --- */
+  --chart-1: #91543B;
+  --chart-2: #2A9D8D;
+  --chart-3: #275465;
+  --chart-4: #E3BE6E;
+  --chart-5: #F48E62;
+
+  /* --- Raio de Borda --- */
+  --radius: 0.25rem;
+
+  /* --- Tipografia --- */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* --- Tokens de Sidebar --- */
+  --sidebar-background: #FBFAF7;
+  --sidebar-foreground: #14161A;
+  --sidebar-primary: #14161A;
+  --sidebar-primary-foreground: #FBFAF7;
+  --sidebar-accent: #F1EEE9;
+  --sidebar-accent-foreground: #14161A;
+  --sidebar-border: #E7E2DA;
+  --sidebar-ring: #91543B;
+}
+
+
+/* =================================================================
+   2. ESTILOS BASE DE ELEMENTOS (CSS PURO — sem @apply)
+   =================================================================
+   Substitui as antigas diretivas @apply do Tailwind por propriedades
+   CSS equivalentes. Aplicados globalmente a elementos HTML.
+   ================================================================= */
+
+/* Universal — cor padrão de borda e outline
+   Usado por: qualquer elemento que receba border ou outline */
+* {
+  border-color: var(--border);
+  outline-color: var(--ring) / 0.5;
+}
+
+/* body — fundo da página, cor de texto, fonte do corpo, suavização de fonte
+   Usado em: TODAS as páginas (Home, ModelDetail, Login, Register, etc.) */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* h1–h6 — fonte serif + espaçamento de letras reduzido
+   Usado em: Hero (.title), Gallery (.sectionTitle), FAQ (.title),
+             Process (.title), Testimonials (.title), CTASection (.title),
+             OrderForm (.title), ModelDetail (.title) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* =================================================================
+   3. CLASSES UTILITÁRIAS GLOBAIS (CSS PURO — sem @layer)
+   =================================================================
+   Estas classes são usadas em múltiplos componentes e NÃO são scoped
+   a um único arquivo .module.css. São aplicadas diretamente no JSX
+   via className="nome-da-classe".
+
+   São globais porque o hook useReveal() (src/hooks/useReveal.js)
+   adiciona/remove .reveal e .in-view via classList do DOM, o que
+   requer que elas existam no escopo global.
+   ================================================================= */
+
+/* .font-display — fonte serif de destaque (alias para Cormorant Garamond)
+   Usado em: qualquer elemento que precise da fonte display via className */
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* .reveal — estado inicial da animação de entrada ao rolar (opacity 0 + deslocado para baixo)
+   Usado por: hook useReveal() em src/hooks/useReveal.js
+   Aplicado em: Hero, Categories, Gallery, Process, FAQ, Testimonials,
+                CTASection, OrderForm — via ref + className="reveal" */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* .reveal.in-view — estado visível da animação (opacity 1 + posição original)
+   Adicionada pelo IntersectionObserver dentro de useReveal()
+   quando o elemento entra na viewport */
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* .text-balance — quebra de linha balanceada para títulos
+   Usado em: Hero.jsx (título principal), títulos de seção via className */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* .grain-bg — textura sutil de grão/noise como background
+   Usado em: disponível para qualquer seção que queira textura granulada;
+   o OrderForm aplica um padrão similar diretamente em seu .module.css */
+.grain-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* .scrollbar-hide — oculta a barra de rolagem mantendo a rolagem funcional
+   Usado em: contêineres com rolagem horizontal (galleries, listas horizontais) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE e Edge */
+  scrollbar-width: none;    /* Firefox */
+}
