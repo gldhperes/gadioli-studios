@@ -15,7 +15,7 @@ interface OrderDrawerProps {
     models: IModel[];
 }
 
-export default function OrderDrawer({ open, onClose, modelName, models, }: OrderDrawerProps) {
+export default function OrderDrawer({ open, onClose, modelName, }: OrderDrawerProps) {
 
     // Trava o scroll da página enquanto o drawer está aberto
     useEffect(() => {

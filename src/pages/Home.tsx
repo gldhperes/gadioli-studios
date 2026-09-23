@@ -8,7 +8,7 @@ import Process from '../components/sections/Process';
 import FAQ from '../components/sections/FAQ';
 import Testimonials from '../components/sections/Testimonials';
 import CTASection from '../components/sections/CTASection';
-import OrderForm from '../components/sections/OrderForm';
+// import OrderForm from '../components/sections/OrderForm';
 
 // Data
 import models from '../data/models.ts';

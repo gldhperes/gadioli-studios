@@ -20,19 +20,16 @@ import styles from './ModelDetail.module.css';
 export default function ModelDetail() {
   const { slug } = useParams();
   const [model, setModel] = useState<IModel | null>(null);
-  const [loading, setLoading] = useState(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     const found = models.find((m) => m.slug === slug) ?? null;
 
     setModel(found);
-    setLoading(false);
   }, [slug]);
 
   const handleBuy = () => {
     if (!model) return;
-    // window.location.href = `/?modelo=${encodeURIComponent(model.name)}#pedido`;
     setDrawerOpen(true);
   };
 

@@ -8,14 +8,6 @@ export default function Categories() {
   const headerRef = useReveal();
 
   const _Categories = Object.values(categories.Categories);
-  const categoriesBG = [
-    styles.cardBg1,
-    styles.cardBg2,
-    styles.cardBg3,
-    styles.cardBg4,
-    styles.cardBg5,
-    styles.cardBg6,
-  ]
 
   return (
     <section className={styles.section}>
@@ -32,7 +24,7 @@ export default function Categories() {
 
         <div className={styles.grid}>
 
-          {_Categories.map((cat, i) => {
+          {_Categories.map((cat) => {
             const Icon = cat.icon;
 
             return (

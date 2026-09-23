@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Check, ChevronRight, ChevronLeft, Upload, Loader2, Copy } from 'lucide-react';
+import { Check, ChevronRight, ChevronLeft, Loader2, Copy } from 'lucide-react';
 import { useReveal } from '../../hooks/useReveal.ts';
 import styles from './OrderForm.module.css';
 // import type IModel from '../../interfaces/IModel.ts'
@@ -27,13 +27,12 @@ interface OrderFormData {
 
 }
 
-export default function OrderForm({ preselectedModel, onClose }: OrderFormProps) {
+export default function OrderForm({ preselectedModel }: OrderFormProps) {
   const WHATSAPP_NUMBER = '5521997857619';
   const ref = useReveal();
   const [step, setStep] = useState(0);
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
-  const [uploading, setUploading] = useState(false);
   const [form, setForm] = useState<OrderFormData>({
     client_name: '', email: '', phone: '', event_date: '',
     event_time: '', event_location: '', names: '', age: '', message: '',
@@ -79,16 +78,7 @@ export default function OrderForm({ preselectedModel, onClose }: OrderFormProps)
     }));
   };
 
-  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setUploading(true);
-    try {
-      // const { file_url } = await base44.integrations.Core.UploadFile({ file });
-      // update('receipt_url', file_url);
-    } catch (err) { console.error(err); }
-    setUploading(false);
-  };
+
 
   const handleSubmit = () => {
     setLoading(true);
@@ -151,7 +141,7 @@ Estou enviando este pedido através do site Gadioli Studio.
             </p>
             <button
               onClick={() => {
-                setDone(false); setStep(0); setForm((f) => (
+                setDone(false); setStep(0); setForm(() => (
                   {
                     client_name: '', email: '', phone: '', event_date: '',
                     event_time: '', event_location: '', names: '', age: '', message: '',
@@ -188,14 +178,6 @@ Estou enviando este pedido através do site Gadioli Studio.
               <span>Preencha os dados do convite.</span>
             </div>
 
-            {/* <div
-              className={`${styles.instruction} ${step > 1 ? styles.instructionCompleted : ''
-                }`}
-            >
-              <span className={styles.instructionNumber}>2</span>
-              <span>Preencha as informações do convite.</span>
-            </div> */}
-
             <div
               className={`${styles.instruction} ${step > 1 ? styles.instructionCompleted : ''
                 }`}
@@ -222,7 +204,7 @@ Estou enviando este pedido através do site Gadioli Studio.
 
         {/* Progress */}
         <div className={styles.progress}>
-          {steps.map((s, idx) => (
+          {steps.map((_, idx) => (
             <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <div className={`${styles.stepCircle} ${idx <= step ? styles.stepCircleActive : ''}`}>
                 {idx < step ? <Check size={14} /> : idx + 1}
