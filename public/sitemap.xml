@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+    <url>
+        <loc>https://gadiolistudios.netlify.app/</loc>
+    </url>
+
+    <url>
+        <loc>https://gadiolistudios.netlify.app/modelos/</loc>
+    </url>
+
+    <url>
+        <loc>https://gadiolistudios.netlify.app/modelos/categoria/15-anos</loc>
+    </url>
+
+    <url>
+        <loc>https://gadiolistudios.netlify.app/modelos/categoria/aniversarios</loc>
+    </url>
+
+    <url>
+        <loc>https://gadiolistudios.netlify.app/modelos/categoria/casamentos</loc>
+    </url>
+
+    <url>
+        <loc>https://gadiolistudios.netlify.app/modelos/categoria/flyer</loc>
+    </url>
+
+    <url>
+        <loc>https://gadiolistudios.netlify.app/modelos/categoria/infantil</loc>
+    </url>
+
+    <url>
+        <loc>https://gadiolistudios.netlify.app/modelos/categoria/times-de-futebol</loc>
+    </url>
+</urlset>
