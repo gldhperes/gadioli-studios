@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-// import { base44 } from '@/api/base44Client';
 import { ArrowLeft, Check } from 'lucide-react';
 
 // Componentes
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import OrderDrawer from '../components/OrderDrawer';
+import SEO from '../components/SEO';
 
 // Interfaces
 import type IModel from '../interfaces/IModel';
@@ -55,6 +55,15 @@ export default function ModelDetail() {
 
   return (
     <div className={styles.wrapper}>
+      <SEO
+        title={model.seo?.title || `${model.name} | Gadioli Studio`}
+        description={
+          model.seo?.description ||
+          model.description
+        }
+        canonical={`/modelos/${model.slug}`}
+        image={model.image_url}
+      />
       <Header />
       <main className={styles.main}>
         <div className={styles.container}>
@@ -66,7 +75,7 @@ export default function ModelDetail() {
             {/* Left: Image */}
             <div className={styles.leftCol}>
               <div className={styles.imageWrap}>
-                <img src={model.image_url} alt={model.name} className={styles.detailImage} />
+                <img src={model.image_url} alt={`${model.name} - convite de ${model.category.toLowerCase()}`} className={styles.detailImage} />
               </div>
             </div>
 

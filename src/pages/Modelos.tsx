@@ -1,168 +1,46 @@
-import { useState } from 'react';
-import { SlidersHorizontal } from 'lucide-react';
-import { useSearchParams } from 'react-router-dom';
+import type IModel from "../interfaces/IModel";
+import categoriesData from "../data/categories";
 
-// Components
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ModelCard from '../components/ModelCard';
-import SEO from '../components/SEO';
+const price = 10;
 
-// Data
-import categoriesData from '../data/categories';
-import models from '../data/models';
+const { Categories } = categoriesData;
 
-// Style
-import styles from './Modelos.module.css';
+const createSlug = (value: string) => {
+    return value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+};
 
-export default function Modelos() {
-    const { Categories, CategoriesNames } = categoriesData;
+const models: IModel[] = Categories.flatMap((category: any) =>
+    category.images.map((image: any) => {
+        const slug = createSlug(image.name);
 
-    const categoryNames = Object.values(CategoriesNames);
+        return {
+            id: slug,
 
-    const [searchParams, setSearchParams] = useSearchParams();
+            slug,
 
-    const categoryParam = searchParams.get('categoria');
+            image_url: image.image,
 
-    const initialCategory =
-        categoryParam && categoryNames.includes(categoryParam)
-            ? categoryParam
-            : 'Todos';
+            name: image.name,
 
-    const [active, setActive] = useState(initialCategory);
+            category: category.name,
 
-    const handleCategoryChange = (category: string) => {
-        setActive(category);
+            description: `Modelo de convite para ${category.name.toLowerCase()}.`,
 
-        if (category === 'Todos') {
-            setSearchParams({});
-        } else {
-            setSearchParams({
-                categoria: category,
-            });
-        }
-    };
+            price,
 
-    const filteredModels =
-        active === 'Todos'
-            ? models
-            : models.filter((model) => model.category === active);
+            isMain: image.isMain,
 
-    return (
-        <div className={styles.wrapper}>
-            <SEO
-                title="Modelos de Convites | Gadioli Studio"
-                description="Explore modelos de convites personalizados para aniversários, casamentos, 15 anos, festas infantis, futebol e muito mais."
-                canonical="/modelos"
-            />
+            seo: {
+                title: `${image.name} | Gadioli Studio`,
+                description: `${image.name}, modelo de convite personalizado para ${category.name.toLowerCase()}. Escolha seu modelo e personalize seu convite com o Gadioli Studio.`,
+            },
+        };
+    })
+);
 
-            <Header />
-
-            <main>
-
-                {/* Introdução */}
-                <section className={styles.intro}>
-                    <div className={styles.container}>
-                        <span className={styles.eyebrow}>
-                            Galeria de modelos
-                        </span>
-
-                        <h1 className={styles.title}>
-                            Encontre o convite que combina com a sua celebração.
-                        </h1>
-
-                        <p className={styles.subtitle}>
-                            Escolha uma categoria para descobrir modelos pensados
-                            para cada momento — todos personalizados manualmente
-                            pelo Gadioli Studio.
-                        </p>
-                    </div>
-                </section>
-
-                {/* Filtro de categorias */}
-                <section className={styles.filterSection}>
-                    <div className={styles.container}>
-                        <div className={styles.filterBar}>
-
-                            <span className={styles.filterLabel}>
-                                <SlidersHorizontal size={16} />
-                                Filtrar por categoria
-                            </span>
-
-                            <div className={styles.pills}>
-
-                                {/* Todos */}
-                                <button
-                                    className={`${styles.pill} ${active === 'Todos'
-                                            ? styles.pillActive
-                                            : ''
-                                        }`}
-                                    onClick={() =>
-                                        handleCategoryChange('Todos')
-                                    }
-                                >
-                                    Todos
-                                </button>
-
-                                {/* Categorias */}
-                                {categoryNames.map((cat) => {
-                                    const category = Categories.find(
-                                        (category) =>
-                                            category.name === cat
-                                    );
-
-                                    return (
-                                        <button
-                                            key={cat}
-                                            className={`${styles.pill} ${active === cat
-                                                    ? styles.pillActive
-                                                    : ''
-                                                }`}
-                                            style={{
-                                                backgroundColor:
-                                                    category?.bg,
-                                            }}
-                                            onClick={() =>
-                                                handleCategoryChange(cat)
-                                            }
-                                        >
-                                            {cat}
-                                        </button>
-                                    );
-                                })}
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Grid de modelos */}
-                <section className={styles.gridSection}>
-                    <div className={styles.container}>
-
-                        {filteredModels.length === 0 ? (
-                            <p className={styles.empty}>
-                                Nenhum modelo encontrado nesta categoria ainda.
-                            </p>
-                        ) : (
-                            <div className={styles.grid}>
-
-                                {filteredModels.map((model) => (
-                                    <ModelCard
-                                        key={model.id || model.slug}
-                                        model={model}
-                                    />
-                                ))}
-
-                            </div>
-                        )}
-
-                    </div>
-                </section>
-
-            </main>
-
-            <Footer />
-        </div>
-    );
-}
+export default models;
