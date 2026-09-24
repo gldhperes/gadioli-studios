@@ -1,5 +1,5 @@
 import type IModel from "../interfaces/IModel";
-import categoriesData from "./categories";
+import categoriesData from "../data/categories";
 
 const price = 10;
 
@@ -14,8 +14,8 @@ const createSlug = (value: string) => {
         .replace(/^-+|-+$/g, "");
 };
 
-const models: IModel[] = Categories.flatMap((category) =>
-    category.images.map((image) => {
+const models: IModel[] = Categories.flatMap((category: any) =>
+    category.images.map((image: any) => {
         const slug = createSlug(image.name);
 
         return {
@@ -29,7 +29,7 @@ const models: IModel[] = Categories.flatMap((category) =>
 
             category: category.name,
 
-            description: `${image.name}, modelo de convite personalizado para ${category.name.toLowerCase()}.`,
+            description: `Modelo de convite para ${category.name.toLowerCase()}.`,
 
             price,
 
