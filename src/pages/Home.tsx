@@ -8,7 +8,7 @@ import Process from '../components/sections/Process';
 import FAQ from '../components/sections/FAQ';
 import Testimonials from '../components/sections/Testimonials';
 import CTASection from '../components/sections/CTASection';
-// import OrderForm from '../components/sections/OrderForm';
+import SEO from '../components/SEO';
 
 // Data
 import models from '../data/models.ts';
@@ -21,6 +21,12 @@ export default function Home() {
 
   return (
     <div className={styles.wrapper}>
+      <SEO
+        title="Gadioli Studio | Convites Personalizados"
+        description="Convites personalizados para aniversários, casamentos, 15 anos, festas infantis e muito mais. Escolha seu modelo e personalize com o Gadioli Studio."
+        canonical="/"
+      />
+
       <Header />
       <main>
         <Hero />
@@ -30,7 +36,7 @@ export default function Home() {
         <Testimonials />
         <FAQ />
         <CTASection />
-        
+
       </main>
       <Footer />
     </div>

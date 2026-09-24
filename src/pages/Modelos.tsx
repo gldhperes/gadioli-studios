@@ -6,6 +6,7 @@ import { useSearchParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ModelCard from '../components/ModelCard';
+import SEO from '../components/SEO';
 
 // Data
 import categoriesData from '../data/categories';
@@ -49,6 +50,12 @@ export default function Modelos() {
 
     return (
         <div className={styles.wrapper}>
+            <SEO
+                title="Modelos de Convites | Gadioli Studio"
+                description="Explore modelos de convites personalizados para aniversários, casamentos, 15 anos, festas infantis, futebol e muito mais."
+                canonical="/modelos"
+            />
+
             <Header />
 
             <main>
@@ -86,11 +93,10 @@ export default function Modelos() {
 
                                 {/* Todos */}
                                 <button
-                                    className={`${styles.pill} ${
-                                        active === 'Todos'
+                                    className={`${styles.pill} ${active === 'Todos'
                                             ? styles.pillActive
                                             : ''
-                                    }`}
+                                        }`}
                                     onClick={() =>
                                         handleCategoryChange('Todos')
                                     }
@@ -108,11 +114,10 @@ export default function Modelos() {
                                     return (
                                         <button
                                             key={cat}
-                                            className={`${styles.pill} ${
-                                                active === cat
+                                            className={`${styles.pill} ${active === cat
                                                     ? styles.pillActive
                                                     : ''
-                                            }`}
+                                                }`}
                                             style={{
                                                 backgroundColor:
                                                     category?.bg,

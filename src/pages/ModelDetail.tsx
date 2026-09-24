@@ -47,7 +47,7 @@ export default function ModelDetail() {
   }
 
   const details = [
-    { label: 'Preço', value: `R$ ${model.price}` },
+    { label: 'Preço', value: `R$ ${model.price.toFixed(2).replace('.', ',')}` },
     { label: 'O que pode ser personalizado', value: model.customization || 'Textos, data, horário, local, paleta de cores e pequenos ajustes visuais.' },
     { label: 'Prazo de entrega', value: model.delivery_time || 'Entrega em até 3 dias úteis após confirmação do pagamento.' },
     { label: 'Após a compra', value: model.after_purchase || 'Após a compra, você preencherá um formulário com todos os dados do seu evento e anexará o comprovante Pix.' },

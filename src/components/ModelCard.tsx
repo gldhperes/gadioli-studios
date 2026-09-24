@@ -28,7 +28,7 @@ export default function ModelCard({ model }: ModelCardProps) {
             </div>
 
             <div className={styles.cardInfo}>
-                <span className={styles.price}>R$ {model.price}</span>
+                <span className={styles.price}>R$ {model.price.toFixed(2).replace('.', ',')}</span>
 
                 <span className={styles.detailsLink}>
                     Ver detalhes

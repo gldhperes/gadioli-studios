@@ -1,7 +1,7 @@
 import type IModel from "../interfaces/IModel";
 import categoriesData from "./categories";
 
-const price = "10,00";
+const price = 10;
 
 const { Categories } = categoriesData;
 
