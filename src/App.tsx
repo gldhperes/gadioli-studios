@@ -5,12 +5,14 @@ import ScrollToTop from './components/ScrollToTop.tsx';
 import ModelDetail from './pages/ModelDetail.tsx';
 import PageNotFound from './lib/PageNotFound.tsx';
 import Modelos from './pages/Modelos.tsx';
+import SiteStructuredData from './components/SiteStructuredData';
 
 function App() {
 
   return (
     <Router>
       <ScrollToTop />
+      <SiteStructuredData />
 
       <Routes>
         {/* Add your page Route elements here */}
