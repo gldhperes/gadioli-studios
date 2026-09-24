@@ -22,7 +22,7 @@ export default function Gallery({ models = [] }: GalleryProps) {
             <h2 className={styles.title}>Escolha o convite que mais combina com o seu evento.</h2>
           </div>
           <p className={styles.subtitle}>
-            Cada modelo recebe seus textos, dados do evento, ajustes de cores e acabamento final feitos manualmente pelo estúdio.
+            Cada modelo recebe seus textos, dados do evento e observações. Gadioli Studio personaliza e lhe entrega.
           </p>
         </div>
 

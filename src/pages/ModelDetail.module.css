@@ -1,6 +1,6 @@
 .wrapper {
   min-height: 100vh;
-  background:  var(--background);
+  background: var(--background);
 }
 
 .loadingWrap {
@@ -8,20 +8,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background:  var(--background);
+  background: var(--background);
 }
 
 .spinner {
   width: 2rem;
   height: 2rem;
-  border: 2px solid  var(--border);
-  border-top-color:  var(--accent);
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
   border-radius: 9999px;
   animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .notFound {
@@ -37,17 +39,19 @@
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.875rem;
   font-weight: 500;
-  color:  var(--foreground);
+  color: var(--foreground);
 }
 
 .backLink {
   margin-top: 1rem;
   display: inline-block;
-  color:  var(--accent);
+  color: var(--accent);
   text-decoration: none;
 }
 
-.backLink:hover { text-decoration: underline; }
+.backLink:hover {
+  text-decoration: underline;
+}
 
 .main {
   padding-top: 6rem;
@@ -65,13 +69,15 @@
   align-items: center;
   gap: 0.375rem;
   font-size: 0.875rem;
-  color:  var(--muted-foreground);
+  color: var(--muted-foreground);
   text-decoration: none;
   transition: color 200ms;
   margin-bottom: 2rem;
 }
 
-.backNav:hover { color:  var(--foreground); }
+.backNav:hover {
+  color: var(--foreground);
+}
 
 .grid {
   display: grid;
@@ -79,7 +85,10 @@
 }
 
 @media (min-width: 768px) {
-  .grid { grid-template-columns: repeat(2, 1fr); gap: 4rem; }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
 }
 
 .leftCol {
@@ -96,26 +105,23 @@
 
 .imageWrap {
   border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
-  background:  var(--muted) / 0.2;
   aspect-ratio: 3/4;
 }
 
 .detailImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .badge {
   display: inline-block;
   border-radius: 9999px;
-  background:  var(--secondary);
+  background: var(--secondary);
   padding: 0.25rem 0.75rem;
   font-size: 0.75rem;
   font-weight: 500;
-  color:  var(--muted-foreground);
+  color: var(--muted-foreground);
   margin-bottom: 1rem;
 }
 
@@ -124,17 +130,19 @@
   font-size: 2.25rem;
   font-weight: 500;
   line-height: 1.25;
-  color:  var(--foreground);
+  color: var(--foreground);
   margin-bottom: 0.75rem;
   letter-spacing: -0.02em;
 }
 
 @media (min-width: 768px) {
-  .title { font-size: 3rem; }
+  .title {
+    font-size: 3rem;
+  }
 }
 
 .description {
-  color:  var(--muted-foreground);
+  color: var(--muted-foreground);
   line-height: 1.625;
   margin-bottom: 2rem;
 }
@@ -146,7 +154,7 @@
 }
 
 .detailItem {
-  border-top: 1px solid  var(--border) / 0.4;
+  border-top: 1px solid var(--border) / 0.4;
   padding-top: 1rem;
 }
 
@@ -154,14 +162,14 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color:  var(--muted-foreground);
+  color: var(--muted-foreground);
   font-weight: 500;
   margin-bottom: 0.375rem;
 }
 
 .detailValue {
   font-size: 0.875rem;
-  color:  var(--foreground);
+  color: var(--foreground);
   line-height: 1.625;
 }
 
@@ -172,11 +180,11 @@
   justify-content: center;
   gap: 0.5rem;
   border-radius: 9999px;
-  background:  var(--primary);
+  background: var(--primary);
   padding: 0.875rem 2rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color:  var(--primary-foreground);
+  color: var(--primary-foreground);
   border: none;
   cursor: pointer;
   transition: all 300ms;
@@ -184,10 +192,12 @@
 }
 
 @media (min-width: 768px) {
-  .buyButton { width: auto; }
+  .buyButton {
+    width: auto;
+  }
 }
 
 .buyButton:hover {
-  background:  var(--accent);
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  background: var(--accent);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }

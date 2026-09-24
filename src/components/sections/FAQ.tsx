@@ -6,19 +6,19 @@ import styles from './FAQ.module.css';
 const faqs = [
   {
     q: 'Como funciona o processo?',
-    a: 'Você escolhe um modelo, envia os dados pelo formulário, realiza o Pix, anexa o comprovante e recebe o convite personalizado depois.',
+    a: 'Você escolhe um modelo, envia os dados pelo formulário, realiza o Pix, envia o comprovante pelo whatsapp e recebe o convite personalizado depois.',
   },
   {
     q: 'Quanto tempo demora?',
-    a: 'O prazo padrão é informado em cada modelo e começa após a confirmação do pagamento e envio das informações completas.',
+    a: 'O prazo padrão é 2 dias úteis e começa após a confirmação do pagamento e envio das informações completas.',
   },
   {
     q: 'Posso alterar texto, cores e detalhes?',
-    a: 'Sim. Textos, cores e pequenos ajustes visuais podem ser personalizados conforme o modelo escolhido.',
+    a: 'Apenas textos podem ser personalizados conforme formulário do modelo escolhido.',
   },
   {
     q: 'Como faço o pagamento?',
-    a: 'O pagamento é preferencialmente via Pix, com comprovante anexado no formulário de pedido.',
+    a: 'O pagamento é preferencialmente via Pix logo após o Envio do pedido.',
   },
 ];
 

@@ -25,7 +25,7 @@ export default function Footer() {
             <span className={styles.colLabel}>Contato</span>
             <span className={styles.contactText}>Pagamento via Pix</span>
             <span className={styles.contactSub}>Personalização manual após a compra</span>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.instagramLink}>
+            <a href="https://www.instagram.com/gadioli_studios" target="_blank" rel="noopener noreferrer" className={styles.instagramLink}>
               <Instagram size={16} /> @gadiolistudio
             </a>
           </div>

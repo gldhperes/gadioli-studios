@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { Check, ChevronRight, ChevronLeft, Loader2, Copy } from 'lucide-react';
 import { useReveal } from '../../hooks/useReveal.ts';
 import styles from './OrderForm.module.css';
-// import type IModel from '../../interfaces/IModel.ts'
+import pixImg from "../../assets/QRCode.png";
+
 
 interface OrderFormProps {
   preselectedModel?: string;
@@ -30,6 +31,7 @@ interface OrderFormData {
 export default function OrderForm({ preselectedModel }: OrderFormProps) {
   const WHATSAPP_NUMBER = '5521997857619';
   const ref = useReveal();
+  const pixKey = "7f3cb7fb-ea5b-437a-80d6-5850eeb170a3";
   const [step, setStep] = useState(0);
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
@@ -42,7 +44,7 @@ export default function OrderForm({ preselectedModel }: OrderFormProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    const key = "7f3cb7fb-ea5b-437a-80d6-5850eeb170a3";
+    const key = pixKey;
 
     try {
       await navigator.clipboard.writeText(key);
@@ -108,7 +110,7 @@ Estou enviando este pedido através do site Gadioli Studio.
 
       window.open(whatsappUrl, '_blank');
 
-      setStep(3);
+      setStep(step + 1);
     } catch (err) {
       console.error(err);
     } finally {
@@ -184,8 +186,9 @@ Estou enviando este pedido através do site Gadioli Studio.
             >
               <span className={styles.instructionNumber}>2</span>
               <span>
-                Cheque os dados e envie o pedido. Isso irá abrir uma conversa no
-                WhatsApp conosco contendo o formulário que você preencheu.
+                Enviar o pedido abrirá uma conversa conosco pelo
+                WhatsApp contendo o formulário que você preencheu.
+                Após o envio retorne ao site para concluir o pagamento e finalizar o pedido.
               </span>
             </div>
 
@@ -195,7 +198,7 @@ Estou enviando este pedido através do site Gadioli Studio.
             >
               <span className={styles.instructionNumber}>3</span>
               <span>
-                Pague no Pix e envie o comprovante para a conversa conosco para
+                Faça no Pix e envie o comprovante para a conversa conosco para
                 finalizar o pedido.
               </span>
             </div>
@@ -278,10 +281,24 @@ Estou enviando este pedido através do site Gadioli Studio.
             </div>
           )}
 
-          {step === 3 && (
+          {step === 1 && (
+            <div className={styles.checkForm}>
+              <div>
+                <p className={styles.label}>Nome do solicitante: {form.client_name}</p>
+                <p className={styles.label}>Nome do(a) Aniversariante: {form.names}</p>
+                <p className={styles.label}>Idade do(a) aniversariante: {form.age}</p>
+                <p className={styles.label}>Data do evento: {form.event_date}</p>
+                <p className={styles.label}>Horário: {form.event_time}</p>
+                <p className={styles.label}>Local do evento:{form.event_location}</p>
+                <p className={styles.label}>Observações: {form.notes}</p>
+              </div>
+            </div>
+          )}
+
+          {(step === 2) && (
             <div className={styles.formGroup} style={{ alignItems: 'center' }}>
               <div>
-                <img />
+                <img src={pixImg} />
               </div>
 
               <div>
@@ -299,7 +316,7 @@ Estou enviando este pedido através do site Gadioli Studio.
                     {copied ? "Chave copiada!" : "Copiar chave:"}
                   </span>
 
-                  <span>7f3cb7fb-ea5b-437a-80d6-5850eeb170a3</span>
+                  <span>{pixKey}</span>
                 </button>
               </div>
             </div>
@@ -312,9 +329,7 @@ Estou enviando este pedido através do site Gadioli Studio.
                 <ChevronLeft size={16} /> Voltar
               </button>)}
 
-
-            {step !== 1 ? (
-
+            {(step > -1 && step !== 1 && step < 2) && (
 
               <button
                 onClick={() => canAdvance() && setStep(step + 1)}
@@ -324,18 +339,21 @@ Estou enviando este pedido através do site Gadioli Studio.
                 Continuar para Passo {step + 2}
                 <ChevronRight size={16} />
               </button>
-            ) : (
-              <button
+            )}
+
+            {step == 1 && (
+              < button
                 onClick={handleSubmit}
                 className={styles.submitBtn}
               >
                 {loading ? <Loader2 size={16} className={styles.spin} /> : <Check size={16} />}
                 {loading ? 'Enviando...' : 'Enviar Pedido'}
               </button>
+
             )}
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }
