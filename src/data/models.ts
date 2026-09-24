@@ -5,18 +5,23 @@ const price = 10;
 
 const { Categories } = categoriesData;
 
-const models: IModel[] = Categories.flatMap((category, categoryIndex) =>
-    category.images.map((image, imageIndex) => {
-        const modelNumber = imageIndex + 1;
+const createSlug = (value: string) => {
+    return value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+};
+
+const models: IModel[] = Categories.flatMap((category) =>
+    category.images.map((image) => {
+        const slug = createSlug(image.name);
 
         return {
-            id: `${categoryIndex + 1}-${modelNumber}`,
+            id: slug,
 
-            slug: `${category.name
-                .toLowerCase()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "")
-                .replace(/\s+/g, "-")}-${modelNumber}`,
+            slug,
 
             image_url: image.image,
 
@@ -24,11 +29,16 @@ const models: IModel[] = Categories.flatMap((category, categoryIndex) =>
 
             category: category.name,
 
-            description: `Modelo de convite para ${category.name.toLowerCase()}.`,
+            description: `${image.name}, modelo de convite personalizado para ${category.name.toLowerCase()}.`,
 
-            price: price,
+            price,
 
             isMain: image.isMain,
+
+            seo: {
+                title: `${image.name} | Gadioli Studio`,
+                description: `${image.name}, modelo de convite personalizado para ${category.name.toLowerCase()}. Escolha seu modelo e personalize seu convite com o Gadioli Studio.`,
+            },
         };
     })
 );

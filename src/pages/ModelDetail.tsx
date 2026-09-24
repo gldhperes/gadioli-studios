@@ -6,7 +6,11 @@ import { ArrowLeft, Check } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import OrderDrawer from '../components/OrderDrawer';
+
+// SEO
 import SEO from '../components/SEO';
+import StructuredData from '../components/StructuredData';
+import { SITE_CONFIG } from '../config/site';
 
 // Interfaces
 import type IModel from '../interfaces/IModel';
@@ -17,6 +21,8 @@ import models from '../data/models';
 // Style
 import styles from './ModelDetail.module.css';
 
+
+
 export default function ModelDetail() {
   const { slug } = useParams();
   const [model, setModel] = useState<IModel | null>(null);
@@ -26,6 +32,7 @@ export default function ModelDetail() {
     const found = models.find((m) => m.slug === slug) ?? null;
 
     setModel(found);
+
   }, [slug]);
 
   const handleBuy = () => {
@@ -33,18 +40,76 @@ export default function ModelDetail() {
     setDrawerOpen(true);
   };
 
+
+
   if (!model) {
     return (
       <div className={styles.wrapper}>
         <Header />
         <div className={styles.notFound}>
           <h1 className={styles.notFoundTitle}>Modelo não encontrado</h1>
-          <Link to="/" className={styles.backLink}>Voltar para a página inicial</Link>
+          <Link to="/" className={styles.backLink}>
+            Voltar para a página inicial
+          </Link>
         </div>
         <Footer />
       </div>
     );
   }
+
+  const productStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+
+    name: model.name,
+
+    image: [
+      model.image_url.startsWith('http')
+        ? model.image_url
+        : `${SITE_CONFIG.url}${model.image_url}`,
+    ],
+
+    description: model.description,
+
+    offers: {
+      '@type': 'Offer',
+      url: `${SITE_CONFIG.url}/modelos/${model.slug}`,
+      price: model.price,
+      priceCurrency: 'BRL',
+      availability: 'https://schema.org/InStock',
+    },
+  };
+
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Início',
+        item: SITE_CONFIG.url,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Modelos',
+        item: `${SITE_CONFIG.url}/modelos`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: model.category,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: model.name,
+        item: `${SITE_CONFIG.url}/modelos/${model.slug}`,
+      },
+    ],
+  };
 
   const details = [
     { label: 'Preço', value: `R$ ${model.price.toFixed(2).replace('.', ',')}` },
@@ -57,13 +122,13 @@ export default function ModelDetail() {
     <div className={styles.wrapper}>
       <SEO
         title={model.seo?.title || `${model.name} | Gadioli Studio`}
-        description={
-          model.seo?.description ||
-          model.description
-        }
+        description={model.seo?.description || model.description}
         canonical={`/modelos/${model.slug}`}
         image={model.image_url}
       />
+      <StructuredData data={productStructuredData} />
+      <StructuredData data={breadcrumbStructuredData} />
+
       <Header />
       <main className={styles.main}>
         <div className={styles.container}>
