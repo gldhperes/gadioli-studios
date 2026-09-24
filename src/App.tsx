@@ -16,6 +16,12 @@ function App() {
         {/* Add your page Route elements here */}
         <Route path="/" element={<Home />} />
         <Route path="/modelos/" element={<Modelos />} />
+        
+        <Route
+          path="/modelos/categoria/:categorySlug"
+          element={<Modelos />}
+        />
+
         <Route path="/modelos/:slug" element={<ModelDetail />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
