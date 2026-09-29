@@ -5,5 +5,6 @@ export default interface ICategory {
     name: string;
     images: IImage[];
     icon: LucideIcon;
+    price: number;
     bg?: string;
 }

@@ -365,7 +365,7 @@ Estou enviando este pedido através do site Gadioli Studio.
 
                  {formConfig.restaurante && (
                   <p className={styles.label}>
-                    Após o envio do pedido, caso queira, fale conosco a respeito da foto do alimento.
+                    Após o envio do pedido, caso queira enviar uma foto do alimento como exemplo, fale conosco.
                   </p>
                 )}
 

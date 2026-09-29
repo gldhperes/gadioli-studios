@@ -31,6 +31,7 @@ const Categories: ICategory[] = [
         name: CategoriesNames._15Anos,
         images: Images15Anos,
         icon: Cake,
+        price: 10,
         bg: "#EBE5DD",
     },
 
@@ -38,6 +39,7 @@ const Categories: ICategory[] = [
         name: CategoriesNames.Aniversarios,
         images: ImagesAniversario,
         icon: Cake,
+        price: 10,
         bg: "#F4E7EB",
     },
 
@@ -45,6 +47,7 @@ const Categories: ICategory[] = [
         name: CategoriesNames.Casamentos,
         images: ImagesCasamento,
         icon: Sparkles,
+        price: 10,
         bg: "#E1EBF0",
     },
 
@@ -52,6 +55,7 @@ const Categories: ICategory[] = [
         name: CategoriesNames.Flyer,
         images: ImagesFlyer,
         icon: Sparkles,
+        price: 15,
         bg: "#E8E5DD",
     },
 
@@ -59,6 +63,7 @@ const Categories: ICategory[] = [
         name: CategoriesNames.Infantil,
         images: ImagesInfantil,
         icon: Sparkles,
+        price: 10,
         bg: "#E5E8EB",
     },
 
@@ -66,6 +71,7 @@ const Categories: ICategory[] = [
         name: CategoriesNames.Times,
         images: ImagesTimeDeFutebol,
         icon: Trophy,
+        price: 10,
         bg: "#F0EBE5",
     },
 
@@ -73,6 +79,7 @@ const Categories: ICategory[] = [
         name: CategoriesNames.Hamburgueria,
         images: ImagesHamburgueria,
         icon: Trophy,
+        price: 15,
         bg: "#EBE5DD",
     },
 

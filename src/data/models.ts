@@ -1,8 +1,6 @@
 import type IModel from "../interfaces/IModel";
 import categoriesData from "../data/categories";
 
-const price = 10;
-
 const { Categories } = categoriesData;
 
 const createSlug = (value: string) => {
@@ -31,7 +29,7 @@ const models: IModel[] = Categories.flatMap((category: any) =>
 
             description: `Modelo para ${category.name.toLowerCase()}.`,
 
-            price,
+            price: category.price,
 
             isMain: image.isMain,
 

@@ -1,11 +1,12 @@
 import { ArrowRight } from 'lucide-react';
 import { useReveal } from '../../hooks/useReveal.ts';
 import styles from './Hero.module.css';
+import categories from '../../data/categories.ts';
 
 const heroImages = [
-  'https://media.base44.com/images/public/6a567992b959288ddd53cef6/31eb60177_generated_76820b12.png',
-  'https://media.base44.com/images/public/6a567992b959288ddd53cef6/a4d3d8fbb_generated_dcedce51.png',
-  'https://media.base44.com/images/public/6a567992b959288ddd53cef6/aa4ee3d86_generated_2067a579.png',
+  categories.Categories[6].images[2].image,
+  categories.Categories[1].images[5].image,
+  categories.Categories[4].images[12].image,
 ];
 
 export default function Hero() {
@@ -51,12 +52,6 @@ export default function Hero() {
             </div>
             <div className={styles.img3}>
               <img src={heroImages[2]} alt="Convite de 15 anos sofisticado" className={styles.heroImg} />
-            </div>
-            <div className={styles.overlayCard}>
-              <p className={styles.overlayTitle}>Pedido sob medida</p>
-              <p className={styles.overlayText}>
-                Você compra o modelo, envia as informações e o estúdio personaliza tudo manualmente.
-              </p>
             </div>
           </div>
 
