@@ -19,7 +19,7 @@ export default function Gallery({ models = [] }: GalleryProps) {
         <div ref={headerRef} className={`reveal ${styles.header}`}>
           <div>
             <span className={styles.eyebrow}>Galeria de modelos</span>
-            <h2 className={styles.title}>Escolha o convite que mais combina com o seu evento.</h2>
+            <h2 className={styles.title}>Escolha o design que mais combina com você ou seu negócio.</h2>
           </div>
           <p className={styles.subtitle}>
             Cada modelo recebe seus textos, dados do evento e observações. Gadioli Studio personaliza e lhe entrega.

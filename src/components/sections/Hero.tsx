@@ -18,13 +18,13 @@ export default function Hero() {
           {/* Left: Content */}
           <div ref={ref} className={`reveal ${styles.leftCol}`}>
             <span className={styles.eyebrow}>
-              Estúdio Gadioli de convites.
+              Estúdio Gadioli
             </span>
             <h1 className={styles.title}>
-              Convites personalizados para tornar seu momento inesquecível.
+              Designs digitais para momentos especiais e para o seu negócio.
             </h1>
             <p className={styles.body}>
-              Escolha um modelo pronto, envie os dados do evento e receba um convite finalizado manualmente pelo Gadioli Studio — com cuidado, beleza e atendimento próximo.
+              Convites digitais para festas, eventos e imagens de divulgação para restaurantes finalizado manualmente pelo Gadioli Studio — com cuidado, beleza e atendimento próximo.
             </p>
             <div className={styles.buttons}>
               <a href="#modelos" className={styles.primaryBtn}>

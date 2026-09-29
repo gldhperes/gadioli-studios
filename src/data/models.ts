@@ -29,7 +29,7 @@ const models: IModel[] = Categories.flatMap((category: any) =>
 
             category: category.name,
 
-            description: `Modelo de convite para ${category.name.toLowerCase()}.`,
+            description: `Modelo para ${category.name.toLowerCase()}.`,
 
             price,
 
@@ -37,7 +37,7 @@ const models: IModel[] = Categories.flatMap((category: any) =>
 
             seo: {
                 title: `${image.name} | Gadioli Studio`,
-                description: `${image.name}, modelo de convite personalizado para ${category.name.toLowerCase()}. Escolha seu modelo e personalize seu convite com o Gadioli Studio.`,
+                description: `${image.name}, modelo personalizado para ${category.name.toLowerCase()}. Escolha seu modelo e personalize design com Gadioli Studio.`,
             },
         };
     })

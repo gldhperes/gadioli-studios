@@ -14,8 +14,8 @@ export default function Categories() {
       <div className={styles.container}>
         <div ref={headerRef} className={`reveal ${styles.header}`}>
           <div>
-            <span className={styles.eyebrow}>Encontre pelo tipo de momento</span>
-            <h2 className={styles.title}>Categorias para cada celebração.</h2>
+            <span className={styles.eyebrow}>Encontre por tipo</span>
+            <h2 className={styles.title}>Categorias.</h2>
           </div>
           <p className={styles.subtitle}>
             Navegue por estilos e ocasiões para chegar rapidamente ao modelo ideal.

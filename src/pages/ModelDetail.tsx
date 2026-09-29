@@ -111,11 +111,44 @@ export default function ModelDetail() {
     ],
   };
 
+  const customizationText = (() => {
+    switch (model.category) {
+      case 'Flyer':
+        return 'Nome do(a) cantor(a), Data, Horário, Local. Posteriormente, enviar foto.';
+
+      case 'Restaurantes':  // Case geral para modelos de alimentação 
+      case 'Hamburgueria':
+        return 'Nome do Estabelecimento, Endereço, Instagram';
+
+      case 'Casamentos':
+        return 'Nome do Noivo e da Noiva, Data, Horário e Local.';
+
+      default:
+        return 'Nome do(a) Aniversariante, Idade, Data, Horário e Local.';
+    }
+  })();
+
   const details = [
-    { label: 'Preço', value: `R$ ${model.price.toFixed(2).replace('.', ',')}` },
-    { label: 'O que pode ser personalizado', value: model.customization || 'Nome do(a) Aniversariante, Idade, Data, Horário e Local.' },
-    { label: 'Prazo de entrega', value: model.delivery_time || 'Entrega em até 2 dias úteis após confirmação do pagamento.' },
-    { label: 'Após a compra', value: model.after_purchase || 'Após a compra, você preencherá um formulário com todos os dados do seu evento. Envie o pedido e o comprovante Pix do QR code gerado.' },
+    {
+      label: 'Preço',
+      value: `R$ ${model.price.toFixed(2).replace('.', ',')}`,
+    },
+    {
+      label: 'O que pode ser personalizado',
+      value: model.customization || customizationText,
+    },
+    {
+      label: 'Prazo de entrega',
+      value:
+        model.delivery_time ||
+        'Entrega em até 2 dias úteis após confirmação do pagamento.',
+    },
+    {
+      label: 'Após a compra',
+      value:
+        model.after_purchase ||
+        'Após a compra, você preencherá um formulário com todos os dados do seu evento. Envie o pedido e o comprovante Pix do QR code gerado.',
+    },
   ];
 
   return (

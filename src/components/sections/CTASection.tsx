@@ -12,7 +12,7 @@ export default function CTASection() {
       <div ref={ref} className={`reveal ${styles.inner}`}>
 
         <h2 className={styles.title}>
-          Seu convite perfeito está a poucos cliques.
+          O Design perfeito está a poucos cliques.
         </h2>
 
         <Link to={`/modelos`} className={styles.button}>

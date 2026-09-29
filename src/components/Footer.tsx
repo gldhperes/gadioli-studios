@@ -2,6 +2,8 @@ import { Instagram } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+  const anoAtual = new Date().getFullYear();
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -11,7 +13,7 @@ export default function Footer() {
               Gadioli<span className={styles.brandAccent}>.</span>
             </h3>
             <p className={styles.brandText}>
-              Estúdio boutique de convites digitais. Personalização manual, cuidado e beleza em cada projeto.
+              Estúdio Gadioli de design digitais. Personalização manual, cuidado e beleza em cada projeto.
             </p>
           </div>
           <div className={styles.navCol}>
@@ -31,7 +33,7 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.bottomRow}>
-          <p className={styles.copyright}>© 2026 Gadioli Studio. Todos os direitos reservados.</p>
+          <p className={styles.copyright}>© {anoAtual} Gadioli Studio. Todos os direitos reservados.</p>
           <a className={styles.madeWith} href="https://www.guilhermeperes.com.br" target="_blank" rel="noopener noreferrer">Feito com cuidado e atenção aos detalhes por <span className={styles.madeBy}>Guilherme Peres</span>.</a>
         </div>
       </div>

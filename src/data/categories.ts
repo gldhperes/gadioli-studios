@@ -11,6 +11,7 @@ import {
     ImagesFlyer,
     ImagesInfantil,
     ImagesTimeDeFutebol,
+    ImagesHamburgueria,
 } from "../assets/Images";
 
 import type ICategory from '../interfaces/ICategory';
@@ -22,6 +23,7 @@ const CategoriesNames = {
     Flyer: "Flyer",
     Infantil: "Infantil",
     Times: "Times de Futebol",
+    Hamburgueria: "Hamburgueria",
 };
 
 const Categories: ICategory[] = [
@@ -66,6 +68,14 @@ const Categories: ICategory[] = [
         icon: Trophy,
         bg: "#F0EBE5",
     },
+
+    {
+        name: CategoriesNames.Hamburgueria,
+        images: ImagesHamburgueria,
+        icon: Trophy,
+        bg: "#EBE5DD",
+    },
+
 ];
 
 export default {

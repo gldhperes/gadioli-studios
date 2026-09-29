@@ -305,3 +305,30 @@ export const ImagesTimeDeFutebol = [
         isMain: false,
     },
 ];
+
+// ==============================
+// TIME DE FUTEBOL
+// ==============================
+
+import Modelo1 from "./Hamburgueria/Modelo 1.png";
+import Modelo2 from "./Hamburgueria/Modelo 2.png";
+import Modelo3 from "./Hamburgueria/Modelo 3.png";
+
+
+export const ImagesHamburgueria = [
+    {
+        image: Modelo1,
+        name: "Modelo 1",
+        isMain: true,
+    },
+    {
+        image: Modelo2,
+        name: "Modelo 2",
+        isMain: false,
+    },
+    {
+        image: Modelo3,
+        name: "Modelo 3",
+        isMain: false,
+    },
+];

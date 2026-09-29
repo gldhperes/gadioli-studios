@@ -2,8 +2,8 @@ import { useReveal } from '../../hooks/useReveal.ts';
 import styles from './Process.module.css';
 
 const steps = [
-  { num: '01', title: 'Escolha um modelo', desc: 'Navegue pelas categorias e encontre o convite ideal para seu momento.' },
-  { num: '02', title: 'Preencha o formulário', desc: 'Informe nomes, data, local, mensagem, tema e observações do evento.' },
+  { num: '01', title: 'Escolha um modelo', desc: 'Navegue pelas categorias e encontre o design ideal.' },
+  { num: '02', title: 'Preencha o formulário', desc: 'Informe nomes, data, local, mensagem, tema e observações.' },
   { num: '03', title: 'Pague via Pix', desc: 'Envie o pedido, logo após, volte ao site para fazer o pix e nos envie o comprovante para iniciar a produção.' },
   { num: '04', title: 'Receba o convite', desc: 'O arquivo final personalizado é enviado posteriormente ao cliente.' },
 ];

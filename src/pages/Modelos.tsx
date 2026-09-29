@@ -146,7 +146,7 @@ export default function Modelos() {
                         <h1 className={styles.title}>
                             {isCategoryPage
                                 ? `Convites de ${categoryFromSlug}`
-                                : 'Encontre o convite que combina com a sua celebração.'}
+                                : 'Encontre o Design que combina com você ou seu negócio.'}
                         </h1>
 
                         <p className={styles.subtitle}>
