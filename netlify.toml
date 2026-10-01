@@ -2,6 +2,14 @@
   command = "npm run build"
   publish = "dist"
 
+# Redireciona o domínio antigo para o domínio novo
+[[redirects]]
+  from = "https://gadiolistudios.netlify.app/*"
+  to = "https://gadiolistudios.com.br/:splat"
+  status = 301
+  force = true
+
+# React Router / SPA
 [[redirects]]
   from = "/*"
   to = "/index.html"
