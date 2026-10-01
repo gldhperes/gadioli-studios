@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gadiolistudios.netlify.app/sitemap.xml
+Sitemap: https://gadiolistudios.com.br/sitemap.xml
