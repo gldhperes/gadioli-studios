@@ -56,11 +56,11 @@ export default function Hero() {
           </div>
 
           {/* Mobile image */}
-          <div className={styles.mobileImage}>
+          {/* <div className={styles.mobileImage}>
             <div className={styles.mobileImgInner}>
               <img src={heroImages[0]} alt="Convite elegante" className={styles.heroImg} />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
