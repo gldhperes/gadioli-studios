@@ -39,12 +39,12 @@ export default function Header() {
         <nav className={styles.nav}>
           {navLinks.map((link) =>
             link.to ? (
-              <Link key={link.to} to={link.to} className={styles.navLink}>
+              <Link key={link.label} to={link.to} className={styles.navLink}>
                 {link.label}
               </Link>
             ) : (
               <button
-                key={link.href}
+                key={link.label}
                 onClick={() => handleNav(link.href)}
                 className={styles.navLink}
               >
@@ -72,14 +72,20 @@ export default function Header() {
       {menuOpen && (
         <div className={styles.mobileMenu}>
           {navLinks.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => handleNav(link.href)}
-              className={styles.mobileLink}
-            >
-              {link.label}
-            </button>
-          ))}
+            link.to ? (
+              <Link key={link.label} to={link.to} className={styles.mobileLink}>
+                {link.label}
+              </Link>
+            ) : (
+              <button
+                key={link.label}
+                onClick={() => handleNav(link.href)}
+                className={styles.mobileLink}
+              >
+                {link.label}
+              </button>
+            )))}
+
           <Link to={"/modelos"} className={styles.mobileBuyButton}>
             Comprar
           </Link>

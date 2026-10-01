@@ -1,5 +1,6 @@
 import { Instagram } from 'lucide-react';
 import styles from './Footer.module.css';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const anoAtual = new Date().getFullYear();
@@ -18,7 +19,10 @@ export default function Footer() {
           </div>
           <div className={styles.navCol}>
             <span className={styles.colLabel}>Navegação</span>
-            <a href="/#modelos" className={styles.navLink}>Modelos</a>
+            {/* <a href="/modelos" className={styles.navLink}>Modelos</a> */}
+            <Link to={"/modelos"} className={styles.navLink}>
+              Modelos
+            </Link>
             <a href="/#como-funciona" className={styles.navLink}>Como funciona</a>
             <a href="/#faq" className={styles.navLink}>FAQ</a>
             <a href="/#pedido" className={styles.navLink}>Fazer pedido</a>

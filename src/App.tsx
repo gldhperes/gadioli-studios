@@ -17,7 +17,7 @@ function App() {
       <Routes>
         {/* Add your page Route elements here */}
         <Route path="/" element={<Home />} />
-        <Route path="/modelos/" element={<Modelos />} />
+        <Route path="/modelos" element={<Modelos />} />
         
         <Route
           path="/modelos/categoria/:categorySlug"
