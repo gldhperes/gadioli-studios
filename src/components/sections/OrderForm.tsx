@@ -165,22 +165,6 @@ Estou enviando este pedido através do site Gadioli Studio.
     }
   };
 
-  const canAdvance = () => {
-    const required: (keyof OrderFormData)[] = [
-      'names',
-      'event_date',
-      'event_time',
-      'event_location',
-      'social',
-    ];
-
-    if (formConfig.showAge) {
-      required.push('age');
-    }
-
-    return required.every((field) => form[field].trim() !== '');
-  };
-
   if (done) {
     return (
       <section id="pedido" className={styles.section}>
@@ -279,7 +263,7 @@ Estou enviando este pedido através do site Gadioli Studio.
 
               <div>
                 <label className={styles.label}>
-                  {formConfig.nameLabel} *
+                  {formConfig.nameLabel}
                 </label>
 
                 <input
@@ -293,7 +277,7 @@ Estou enviando este pedido através do site Gadioli Studio.
               {formConfig.showAge && (
                 <div>
                   <label className={styles.label}>
-                    Idade do(a) aniversariante *
+                    Idade do(a) aniversariante
                   </label>
 
                   <input
@@ -305,10 +289,9 @@ Estou enviando este pedido através do site Gadioli Studio.
                 </div>
               )}
 
-              {/* <div className={styles.twoCol}> */}
               {formConfig.event_date && (
                 <div>
-                  <label className={styles.label}>Data do evento *</label>
+                  <label className={styles.label}>Data do evento</label>
                   <input className={styles.input} type="date" value={form.event_date}
 
                     onChange={(e) => update('event_date', e.target.value)}
@@ -318,7 +301,7 @@ Estou enviando este pedido através do site Gadioli Studio.
 
               {formConfig.event_time && (
                 <div>
-                  <label className={styles.label}>Horário *</label>
+                  <label className={styles.label}>Horário</label>
                   <input className={styles.input} type="time" value={form.event_time}
 
                     onChange={(e) => update('event_time', e.target.value)}
@@ -328,7 +311,7 @@ Estou enviando este pedido através do site Gadioli Studio.
 
               {formConfig.event_time && (
                 <div>
-                  <label className={styles.label}>Local do evento *</label>
+                  <label className={styles.label}>Local do evento</label>
                   <input className={styles.input} value={form.event_location}
                     onChange={(e) => update('event_location', e.target.value)}
                     placeholder="Endereço ou nome do local" />
@@ -363,7 +346,7 @@ Estou enviando este pedido através do site Gadioli Studio.
                   </p>
                 )}
 
-                 {formConfig.restaurante && (
+                {formConfig.restaurante && (
                   <p className={styles.label}>
                     Após o envio do pedido, caso queira enviar uma foto do alimento como exemplo, fale conosco.
                   </p>
@@ -449,8 +432,7 @@ Estou enviando este pedido através do site Gadioli Studio.
             {(step > -1 && step !== 1 && step < 2) && (
 
               <button
-                onClick={() => canAdvance() && setStep(step + 1)}
-                disabled={!canAdvance()}
+                onClick={() => setStep(step + 1)}
                 className={styles.nextBtn}
               >
                 Continuar para Passo {step + 2}

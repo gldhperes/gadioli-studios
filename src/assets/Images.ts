@@ -307,28 +307,69 @@ export const ImagesTimeDeFutebol = [
 ];
 
 // ==============================
-// TIME DE FUTEBOL
+// HAMBURGUERIA
 // ==============================
 
-import Modelo1 from "./Hamburgueria/Modelo 1.png";
-import Modelo2 from "./Hamburgueria/Modelo 2.png";
-import Modelo3 from "./Hamburgueria/Modelo 3.png";
+import HModelo1 from "./Hamburgueria/Modelo 1.png";
+import HModelo2 from "./Hamburgueria/Modelo 2.png";
+import HModelo3 from "./Hamburgueria/Modelo 3.png";
+import HModelo4 from "./Hamburgueria/Modelo 4.png";
+import HModelo5 from "./Hamburgueria/Modelo 5.png";
 
 
 export const ImagesHamburgueria = [
     {
-        image: Modelo1,
-        name: "Modelo 1",
+        image: HModelo1,
+        name: "Hamburgueria Modelo 1",
         isMain: true,
     },
     {
-        image: Modelo2,
-        name: "Modelo 2",
+        image: HModelo2,
+        name: "Hamburgueria Modelo 2",
         isMain: false,
     },
     {
-        image: Modelo3,
-        name: "Modelo 3",
+        image: HModelo3,
+        name: "Hamburgueria Modelo 3",
+        isMain: false,
+    },
+
+    {
+        image: HModelo4,
+        name: "Hamburgueria Modelo 4",
+        isMain: false,
+    },
+
+    {
+        image: HModelo5,
+        name: "Hamburgueria Modelo 5",
+        isMain: false,
+    },
+];
+
+// ==============================
+// PIZZARIA
+// ==============================
+
+import PModelo1 from "./Pizzaria/Modelo 1.png";
+import PModelo2 from "./Pizzaria/Modelo 2.png";
+import PModelo3 from "./Pizzaria/Modelo 3.png";
+
+
+export const ImagePizzaria = [
+    {
+        image: PModelo1,
+        name: "Pizzaria Modelo 1",
+        isMain: false,
+    },
+    {
+        image: PModelo2,
+        name: "Pizzaria Modelo 2",
+        isMain: false,
+    },
+    {
+        image: PModelo3,
+        name: "Pizzaria Modelo 3",
         isMain: false,
     },
 ];

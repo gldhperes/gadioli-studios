@@ -12,9 +12,12 @@ import {
     ImagesInfantil,
     ImagesTimeDeFutebol,
     ImagesHamburgueria,
+    ImagePizzaria,
 } from "../assets/Images";
 
 import type ICategory from '../interfaces/ICategory';
+
+
 
 const CategoriesNames = {
     _15Anos: "15 Anos",
@@ -24,7 +27,17 @@ const CategoriesNames = {
     Infantil: "Infantil",
     Times: "Times de Futebol",
     Hamburgueria: "Hamburgueria",
+    Pizzaria: "Pizzaria",
 };
+
+const BGs = [
+    "#EBE5DD", // 0
+    "#F4E7EB", // 1
+    "#E1EBF0", // 2
+    "#E8E5DD", // 3
+    "#E5E8EB", // 4
+    "#F0EBE5", // 5
+]
 
 const Categories: ICategory[] = [
     {
@@ -32,7 +45,7 @@ const Categories: ICategory[] = [
         images: Images15Anos,
         icon: Cake,
         price: 10,
-        bg: "#EBE5DD",
+        bg: BGs[0],
     },
 
     {
@@ -40,7 +53,7 @@ const Categories: ICategory[] = [
         images: ImagesAniversario,
         icon: Cake,
         price: 10,
-        bg: "#F4E7EB",
+        bg: BGs[1]
     },
 
     {
@@ -48,7 +61,7 @@ const Categories: ICategory[] = [
         images: ImagesCasamento,
         icon: Sparkles,
         price: 10,
-        bg: "#E1EBF0",
+        bg: BGs[2]
     },
 
     {
@@ -56,7 +69,7 @@ const Categories: ICategory[] = [
         images: ImagesFlyer,
         icon: Sparkles,
         price: 15,
-        bg: "#E8E5DD",
+        bg: BGs[3]
     },
 
     {
@@ -64,7 +77,7 @@ const Categories: ICategory[] = [
         images: ImagesInfantil,
         icon: Sparkles,
         price: 10,
-        bg: "#E5E8EB",
+        bg: BGs[4]
     },
 
     {
@@ -72,7 +85,7 @@ const Categories: ICategory[] = [
         images: ImagesTimeDeFutebol,
         icon: Trophy,
         price: 10,
-        bg: "#F0EBE5",
+        bg: BGs[5]
     },
 
     {
@@ -80,8 +93,18 @@ const Categories: ICategory[] = [
         images: ImagesHamburgueria,
         icon: Trophy,
         price: 15,
-        bg: "#EBE5DD",
+        bg: BGs[0]
     },
+
+    {
+        name: CategoriesNames.Pizzaria,
+        images: ImagePizzaria,
+        icon: Trophy,
+        price: 15,
+        bg: BGs[1]
+    },
+
+
 
 ];
 
