@@ -16,19 +16,19 @@ interface ModelCardProps {
 export default function ModelCard({ model }: ModelCardProps) {
     return (
         <Link
-            key={model.id || model.slug}
-            to={`/modelos/${model.slug}`}
+            key={model?.id || model?.slug}
+            to={`/modelos/${model?.slug}`}
             className={styles.card}
         >
-            <p className={styles.badge}>{model.category}</p>
+            <p className={styles.badge}>{model?.category}</p>
 
             <div className={styles.cardInfoLeft}>
-                <h3 className={styles.cardName}>{model.name}</h3>
-                <p className={styles.cardDesc}>{model.description}</p>
+                <h3 className={styles.cardName}>{model?.name}</h3>
+                <p className={styles.cardDesc}>{model?.description}</p>
             </div>
 
             <div className={styles.cardInfo}>
-                <span className={styles.price}>R$ {model.price.toFixed(2).replace('.', ',')}</span>
+                <span className={styles.price}>R$ {model?.price.toFixed(2).replace('.', ',')}</span>
 
                 <span className={styles.detailsLink}>
                     Ver detalhes
@@ -36,11 +36,10 @@ export default function ModelCard({ model }: ModelCardProps) {
                 </span>
             </div>
 
-
             <div className={styles.imageWrap}>
                 <img
-                    src={model.image_url}
-                    alt={model.name}
+                    src={model?.image_url}
+                    alt={model?.name}
                     className={styles.image}
                 />
 
