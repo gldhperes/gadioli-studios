@@ -202,3 +202,28 @@
   padding: 4rem 0;
   font-size: 0.95rem;
 }
+
+.comingSoon {
+  width: 100%;
+  text-align: center;
+  padding: 4rem 1.5rem 6rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  /* background: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--foreground) / 0.4), hsl(var(--accent))); */
+  background: linear-gradient(90deg, var(--accent), var(--foreground), var(--accent));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@media (min-width: 768px) {
+  .comingSoon {
+    font-size: 3.25rem;
+    padding: 5rem 1.5rem 7rem;
+  }
+}

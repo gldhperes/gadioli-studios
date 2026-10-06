@@ -235,10 +235,11 @@ export default function Modelos() {
                             </div>
                         )}
 
-                        <div>Em breve mais modelos</div>
+                        {/* Aviso de novos modelos */}
+                        <h2 className={styles.comingSoon}>Em breve novos modelos.</h2>
 
                     </div>
-                    
+
                 </section>
 
             </main>
