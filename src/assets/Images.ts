@@ -3,12 +3,26 @@
 // ==============================
 
 import RosaFloral from "./15 Anos/Rosa floral.png";
-
+import RosaFloral2 from "./15 Anos/Rosa floral 2.png";
+import RosaClaroRose from "./15 Anos/Rosa claro e rosé gold.png";
+import NeonRoxoEPreto from "./15 Anos/Neon roxo e preto.png";
 export const Images15Anos = [
     {
         image: RosaFloral,
         name: "Rosa Floral",
         isMain: true,
+    },
+    {
+        image: RosaFloral2,
+        name: "Rosa Floral 2",
+    },
+    {
+        image: RosaClaroRose,
+        name: "Rosa Claro Rose",
+    },
+    {
+        image: NeonRoxoEPreto,
+        name: "Neon Roxo e Preto",
     },
 ];
 
@@ -25,6 +39,7 @@ import FundoPretoGirassol from "./Aniversario/Fundo preto girassol.png";
 import NeonPoolParty from "./Aniversario/Neon pool party.png";
 import NoturnoElegante from "./Aniversario/Noturno elegante.png";
 import PretoEDourado from "./Aniversario/Preto e dourado.png";
+import PretoEDourado2 from "./Aniversario/Preto e dourado 2.png";
 import PretoExecutivo from "./Aniversario/Preto executivo.png";
 import PretoVintage from "./Aniversario/Preto vintage.png";
 import TardeDePraia from "./Aniversario/Tarde de praia.png";
@@ -39,57 +54,59 @@ export const ImagesAniversario = [
     {
         image: Botanico,
         name: "Botânico",
-        isMain: false,
     },
     {
         image: BrancoFloralElegante,
         name: "Branco Floral Elegante",
-        isMain: false,
     },
     {
         image: ConviteAzulDouradoRochoso,
         name: "Convite Azul e Dourado Rochoso",
-        isMain: false,
+
     },
     {
         image: FundoPretoGirassol,
         name: "Fundo Preto Girassol",
-        isMain: false,
+
     },
     {
         image: NeonPoolParty,
         name: "Neon Pool Party",
-        isMain: false,
+
     },
     {
         image: NoturnoElegante,
         name: "Noturno Elegante",
-        isMain: false,
+
     },
     {
         image: PretoEDourado,
         name: "Preto e Dourado",
-        isMain: false,
+    },
+    {
+        image: PretoEDourado2,
+        name: "Preto e Dourado 2",
+
     },
     {
         image: PretoExecutivo,
         name: "Preto Executivo",
-        isMain: false,
+
     },
     {
         image: PretoVintage,
         name: "Preto Vintage",
-        isMain: false,
+
     },
     {
         image: TardeDePraia,
         name: "Tarde de Praia",
-        isMain: false,
+
     },
     {
         image: VinhoRose,
         name: "Vinho Rosé",
-        isMain: false,
+
     },
 ];
 
@@ -111,12 +128,12 @@ export const ImagesCasamento = [
     {
         image: CasamentoBrancoVerdeClaro,
         name: "Casamento Branco com Verde Claro",
-        isMain: false,
+
     },
     {
         image: CasamentoFloresOuro,
         name: "Casamento Flores e Ouro",
-        isMain: false,
+
     },
 ];
 
@@ -137,7 +154,7 @@ export const ImagesFlyer = [
     {
         image: FlyerSertanejo2,
         name: "Flyer Sertanejo 2",
-        isMain: false,
+
     },
 ];
 
@@ -149,15 +166,24 @@ export const ImagesFlyer = [
 import Bluey from "./Infantil/Bluey.png";
 import Dinossauro from "./Infantil/Dinossauro.png";
 import Espaco from "./Infantil/Espaço.png";
+import Espaco2 from "./Infantil/Espaço 2.png";
 import EstiloHomemAranha from "./Infantil/Estilo homem aranha.png";
+import FlorLilas from "./Infantil/Floral Lilas.png";
+import FundoDoMar from "./Infantil/Fundo do mar.png";
 import Futebol1 from "./Infantil/Futebol 1.png";
 import Futebol2 from "./Infantil/Futebol 2.png";
+import Futebol3 from "./Infantil/Futebol 3.png";
+
+
 import Gamer from "./Infantil/Gamer.png";
+import Gamer2 from "./Infantil/Gamer 2.png";
 import Lego from "./Infantil/Lego.png";
 import Minecraft from "./Infantil/Minecraft.png";
 import PatrulhaCanina1 from "./Infantil/Patrulha canina 1.png";
 import PatrulhaCanina2 from "./Infantil/Patrulha canina 2.png";
+import RosaAmoroso from "./Infantil/Rosa Amoroso.png";
 import Roblox from "./Infantil/Roblox.png";
+import Safari from "./Infantil/Safari.png";
 import Sonic from "./Infantil/Sonic.png";
 import Unicornio from "./Infantil/Unicornio.png";
 import UrsinhoAzul from "./Infantil/Ursinho azul.png";
@@ -171,72 +197,89 @@ export const ImagesInfantil = [
     {
         image: Dinossauro,
         name: "Dinossauro",
-        isMain: false,
+
     },
     {
         image: Espaco,
         name: "Espaço",
-        isMain: false,
+    },
+    {
+        image: Espaco2,
+        name: "Espaço 2",
     },
     {
         image: EstiloHomemAranha,
         name: "Estilo Homem-Aranha",
-        isMain: false,
+    },
+    {
+        image: FlorLilas,
+        name: "Flor Lilas",
+    },
+    {
+        image: FundoDoMar,
+        name: "Fundo Do Mar",
     },
     {
         image: Futebol1,
         name: "Futebol 1",
-        isMain: false,
     },
     {
         image: Futebol2,
         name: "Futebol 2",
-        isMain: false,
+    },
+    {
+        image: Futebol3,
+        name: "Futebol 3",
     },
     {
         image: Gamer,
         name: "Gamer",
-        isMain: false,
+    },
+    {
+        image: Gamer2,
+        name: "Gamer 2",
     },
     {
         image: Lego,
         name: "Lego",
-        isMain: false,
     },
     {
         image: Minecraft,
         name: "Minecraft",
-        isMain: false,
     },
     {
         image: PatrulhaCanina1,
         name: "Patrulha Canina 1",
-        isMain: false,
     },
     {
         image: PatrulhaCanina2,
         name: "Patrulha Canina 2",
-        isMain: false,
     },
     {
         image: Roblox,
         name: "Roblox",
-        isMain: false,
+    },
+    {
+        image: RosaAmoroso,
+        name: "Rosa Amoroso",
+    },
+    {
+        image: Safari,
+        name: "Safari",
     },
     {
         image: Sonic,
         name: "Sonic",
-        isMain: false,
     },
     {
         image: Unicornio,
         name: "Unicórnio",
-        isMain: false,
+
     },
     {
         image: UrsinhoAzul,
         name: "Ursinho Azul",
-        isMain: false,
+
     },
 ];
 
@@ -272,37 +315,37 @@ export const ImagesTimeDeFutebol = [
     {
         image: Corinthians,
         name: "Corinthians",
-        isMain: false,
+
     },
     {
         image: Flamengo,
         name: "Flamengo",
-        isMain: false,
+
     },
     {
         image: Fluminense,
         name: "Fluminense",
-        isMain: false,
+
     },
     {
         image: Palmeiras,
         name: "Palmeiras",
-        isMain: false,
+
     },
     {
         image: RealMadrid,
         name: "Real Madrid",
-        isMain: false,
+
     },
     {
         image: SaoPaulo,
         name: "São Paulo",
-        isMain: false,
+
     },
     {
         image: Vasco,
         name: "Vasco",
-        isMain: false,
+
     },
 ];
 
@@ -326,24 +369,24 @@ export const ImagesHamburgueria = [
     {
         image: HModelo2,
         name: "Hamburgueria Modelo 2",
-        isMain: false,
+
     },
     {
         image: HModelo3,
         name: "Hamburgueria Modelo 3",
-        isMain: false,
+
     },
 
     {
         image: HModelo4,
         name: "Hamburgueria Modelo 4",
-        isMain: false,
+
     },
 
     {
         image: HModelo5,
         name: "Hamburgueria Modelo 5",
-        isMain: false,
+
     },
 ];
 
@@ -360,16 +403,16 @@ export const ImagePizzaria = [
     {
         image: PModelo1,
         name: "Pizzaria Modelo 1",
-        isMain: false,
+
     },
     {
         image: PModelo2,
         name: "Pizzaria Modelo 2",
-        isMain: false,
+
     },
     {
         image: PModelo3,
         name: "Pizzaria Modelo 3",
-        isMain: false,
+
     },
 ];
