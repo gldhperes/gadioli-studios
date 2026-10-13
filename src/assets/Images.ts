@@ -139,6 +139,28 @@ export const ImagesCasamento = [
 
 
 // ==============================
+// CHA DE FRALDAS
+// ==============================
+
+import ChaDeFraldasMenino from "./Cha de Fraldas/Cha de Fraldas menino.png"
+import ChaDeFraldasMenina from "./Cha de Fraldas/Cha de Fraldas menina.png"
+
+export const ImagensChaDeFraldas = [
+    {
+        image: ChaDeFraldasMenino,
+        name: "Chá de Fraldas menino",
+    },
+    {
+        image: ChaDeFraldasMenina,
+        name: "Chá de Fraldas menina",
+          isMain: true,
+    },
+];
+
+
+
+
+// ==============================
 // FLYER
 // ==============================
 
@@ -284,6 +306,27 @@ export const ImagesInfantil = [
 ];
 
 
+
+// ==============================
+// MESVERSÁRIO
+// ==============================
+
+import MesversarioMenino from "./Mesversario/Mesversario Menino.png"
+import MesversarioMenina from "./Mesversario/Mesversario Menina.png"
+
+export const ImagensMesversario = [
+    {
+        image: MesversarioMenino,
+        name: "Mesversário Menino",
+    },
+    {
+        image: MesversarioMenina,
+        name: "Mesversário Menina",
+          isMain: true,
+    },
+];
+
+
 // ==============================
 // SAVE THE DATE
 // ==============================
@@ -403,7 +446,7 @@ export const ImagePizzaria = [
     {
         image: PModelo1,
         name: "Pizzaria Modelo 1",
-
+  isMain: true,
     },
     {
         image: PModelo2,

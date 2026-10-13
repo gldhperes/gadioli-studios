@@ -27,7 +27,7 @@ const models: IModel[] = Categories.flatMap((category: any) =>
 
             category: category.name,
 
-            description: `Modelo para ${category.name.toLowerCase()}.`,
+            // description: `Modelo para ${category.name.toLowerCase()}.`,
 
             price: category.price,
 

@@ -120,6 +120,11 @@ export default function ModelDetail() {
       case 'Hamburgueria':
         return 'Nome do Estabelecimento, Endereço, Instagram';
 
+      case 'Chá de fraldas':
+      case 'Mesversário':
+
+        return 'Data, Horário e Local.';
+
       case 'Casamentos':
         return 'Nome do Noivo e da Noiva, Data, Horário e Local.';
 

@@ -54,6 +54,7 @@ export default function OrderForm({ preselectedModel }: OrderFormProps) {
 
       case 'Restaurantes': // Case geral para modelos de alimentação 
       case 'Hamburgueria':
+
         return {
           nameLabel: 'Nome do local',
           namePlaceholder: 'Ex: Restaurante Gadioli',
@@ -66,6 +67,14 @@ export default function OrderForm({ preselectedModel }: OrderFormProps) {
         return {
           nameLabel: 'Nome do Noivo e da Noiva',
           namePlaceholder: 'Ex: João e Maria',
+          event_time: true,
+          event_date: true,
+          locationLabel: 'Local',
+        };
+
+      case 'Chá de fraldas':
+      case 'Mesversário':
+        return {
           event_time: true,
           event_date: true,
           locationLabel: 'Local',
@@ -260,20 +269,20 @@ Estou enviando este pedido através do site Gadioli Studio.
           {/* Step 1: Event */}
           {step === 0 && (
             <div className={styles.formGroup}>
+              {formConfig.nameLabel && (
+                <div>
+                  <label className={styles.label}>
+                    {formConfig.nameLabel}
+                  </label>
 
-              <div>
-                <label className={styles.label}>
-                  {formConfig.nameLabel}
-                </label>
-
-                <input
-                  className={styles.input}
-                  value={form.names}
-                  onChange={(e) => update('names', e.target.value)}
-                  placeholder={formConfig.namePlaceholder}
-                />
-              </div>
-
+                  <input
+                    className={styles.input}
+                    value={form.names}
+                    onChange={(e) => update('names', e.target.value)}
+                    placeholder={formConfig.namePlaceholder}
+                  />
+                </div>
+              )}
               {formConfig.showAge && (
                 <div>
                   <label className={styles.label}>

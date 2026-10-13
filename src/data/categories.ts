@@ -8,11 +8,14 @@ import {
     Images15Anos,
     ImagesAniversario,
     ImagesCasamento,
+    ImagensChaDeFraldas,
     ImagesFlyer,
     ImagesInfantil,
+    ImagensMesversario,
     ImagesTimeDeFutebol,
     ImagesHamburgueria,
     ImagePizzaria,
+
 } from "../assets/Images";
 
 import type ICategory from '../interfaces/ICategory';
@@ -23,8 +26,10 @@ const CategoriesNames = {
     _15Anos: "15 Anos",
     Aniversarios: "Aniversários",
     Casamentos: "Casamentos",
+    ChaDeFraldas: "Chá de fraldas",
     Flyer: "Flyer",
     Infantil: "Infantil",
+    Mesversario: "Mesversário",
     Times: "Times de Futebol",
     Hamburgueria: "Hamburgueria",
     Pizzaria: "Pizzaria",
@@ -57,6 +62,30 @@ const Categories: ICategory[] = [
     },
 
     {
+        name: CategoriesNames.Mesversario,
+        images: ImagensMesversario,
+        icon: Sparkles,
+        price: 10,
+        bg: BGs[0]
+    },
+
+    {
+        name: CategoriesNames.ChaDeFraldas,
+        images: ImagensChaDeFraldas,
+        icon: Sparkles,
+        price: 10,
+        bg: BGs[3]
+    },
+
+    {
+        name: CategoriesNames.Infantil,
+        images: ImagesInfantil,
+        icon: Sparkles,
+        price: 10,
+        bg: BGs[5]
+    },
+
+    {
         name: CategoriesNames.Casamentos,
         images: ImagesCasamento,
         icon: Sparkles,
@@ -69,14 +98,6 @@ const Categories: ICategory[] = [
         images: ImagesFlyer,
         icon: Sparkles,
         price: 15,
-        bg: BGs[3]
-    },
-
-    {
-        name: CategoriesNames.Infantil,
-        images: ImagesInfantil,
-        icon: Sparkles,
-        price: 10,
         bg: BGs[4]
     },
 
@@ -85,7 +106,7 @@ const Categories: ICategory[] = [
         images: ImagesTimeDeFutebol,
         icon: Trophy,
         price: 10,
-        bg: BGs[5]
+        bg: BGs[1]
     },
 
     {
@@ -93,7 +114,7 @@ const Categories: ICategory[] = [
         images: ImagesHamburgueria,
         icon: Trophy,
         price: 15,
-        bg: BGs[0]
+        bg: BGs[2]
     },
 
     {
@@ -101,7 +122,7 @@ const Categories: ICategory[] = [
         images: ImagePizzaria,
         icon: Trophy,
         price: 15,
-        bg: BGs[1]
+        bg: BGs[3]
     },
 
 

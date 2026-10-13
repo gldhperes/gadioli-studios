@@ -31,15 +31,11 @@ export default function Modelos() {
 
     const categoryParam = searchParams.get('categoria');
 
-    const categoryFromSlug = Object.entries(categorySlugs).find(
-        ([, slug]) => slug === categorySlug
-    )?.[0];
+    const categoryFromSlug = Object.entries(categorySlugs).find(([, slug]) => slug === categorySlug)?.[0];
 
-    const initialCategory = categoryFromSlug
-        ? categoryFromSlug
+    const initialCategory = categoryFromSlug ? categoryFromSlug
         : categoryParam && categoryNames.includes(categoryParam)
-            ? categoryParam
-            : 'Todos';
+            ? categoryParam : 'Todos';
 
     const [active, setActive] = useState(initialCategory);
 
@@ -171,10 +167,7 @@ export default function Modelos() {
 
                                 {/* Todos */}
                                 <button
-                                    className={`${styles.pill} ${active === 'Todos'
-                                        ? styles.pillActive
-                                        : ''
-                                        }`}
+                                    className={`${styles.pill} ${active === 'Todos' ? styles.pillActive : ''}`}
                                     onClick={() =>
                                         handleCategoryChange('Todos')
                                     }

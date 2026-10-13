@@ -4,9 +4,9 @@ import styles from './Hero.module.css';
 import categories from '../../data/categories.ts';
 
 const heroImages = [
-  categories.Categories[6].images[2].image,
-  categories.Categories[1].images[5].image,
-  categories.Categories[4].images[12].image,
+  categories.Categories[8].images[2].image, // Hamburger
+  categories.Categories[1].images[5].image, // Pool party = Aniversario
+  categories.Categories[4].images[19].image, // Sonic - Infantil
 ];
 
 export default function Hero() {
