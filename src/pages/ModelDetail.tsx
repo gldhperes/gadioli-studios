@@ -69,7 +69,7 @@ export default function ModelDetail() {
         : `${SITE_CONFIG.url}${model.image_url}`,
     ],
 
-    description: model.description,
+    description: model.longDescription || model.description,
 
     offers: {
       '@type': 'Offer',
@@ -187,6 +187,10 @@ export default function ModelDetail() {
               <span className={styles.badge}>{model.category}</span>
               <h1 className={styles.title}>{model.name}</h1>
               <p className={styles.description}>{model.description}</p>
+
+              {model.longDescription && (
+                <p className={styles.description}>{model.longDescription}</p>
+              )}
 
               <div className={styles.details}>
                 {details.map((d) => (

@@ -124,3 +124,19 @@
   font-weight: 600;
   color: black;
 }
+
+.legalLinks {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 20px 0;
+}
+
+.navCol,
+.contactCol {
+  /* display: flex;
+  flex-direction: column;
+  gap: 0.5rem; */
+}

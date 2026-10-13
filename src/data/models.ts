@@ -1,5 +1,6 @@
 import type IModel from "../interfaces/IModel";
 import categoriesData from "../data/categories";
+import { getProductContent } from "../data/productContent";
 
 const { Categories } = categoriesData;
 
@@ -27,7 +28,9 @@ const models: IModel[] = Categories.flatMap((category: any) =>
 
             category: category.name,
 
-            // description: `Modelo para ${category.name.toLowerCase()}.`,
+            description: getProductContent(category.name, image.name).description,
+
+            longDescription: getProductContent(category.name, image.name).longDescription,
 
             price: category.price,
 
@@ -35,7 +38,7 @@ const models: IModel[] = Categories.flatMap((category: any) =>
 
             seo: {
                 title: `${image.name} | Gadioli Studio`,
-                description: `${image.name}, modelo personalizado para ${category.name.toLowerCase()}. Escolha seu modelo e personalize design com Gadioli Studio.`,
+                description: getProductContent(category.name, image.name).description,
             },
         };
     })

@@ -40,7 +40,17 @@ export default function Footer() {
           <p className={styles.copyright}>© {anoAtual} Gadioli Studio. Todos os direitos reservados.</p>
           <a className={styles.madeWith} href="https://www.guilhermeperes.com.br" target="_blank" rel="noopener noreferrer">Feito com cuidado e atenção aos detalhes por <span className={styles.madeBy}>Guilherme Peres</span>.</a>
         </div>
+
+        <div className={styles.legalLinks}>
+          <Link to="/politica-de-privacidade" className={styles.navLink}>
+            Política de Privacidade
+          </Link>
+          <Link to="/termos-de-uso" className={styles.navLink}>
+            Termos de Uso
+          </Link>
+        </div>
       </div>
+
     </footer>
   );
 }

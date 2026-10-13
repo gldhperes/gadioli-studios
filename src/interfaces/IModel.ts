@@ -11,6 +11,8 @@ export default interface IModel {
 
     description: string;
 
+    longDescription?: string;
+
     price: number;
 
     isMain?: boolean;
