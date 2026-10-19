@@ -1,9 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Check, ChevronRight, ChevronLeft, Loader2, Copy } from 'lucide-react';
 import { useReveal } from '../../hooks/useReveal.ts';
-import styles from './OrderForm.module.css';
 import pixImg from "../../assets/QRCode.png";
+
+// Datas
 import models from '../../data/models';
+import CategoriesNames from '../../data/categories';
+
+import { getFormConfig } from '../../config/formConfig';
+
+// STYLES
+import styles from './OrderForm.module.css';
+
 
 interface OrderFormProps {
   preselectedModel?: string;
@@ -34,63 +42,15 @@ export default function OrderForm({ preselectedModel }: OrderFormProps) {
     event_date: '', event_time: '', event_location: '', names: '', age: '', social: '', message: '', notes: ''
   });
 
+
   const [copied, setCopied] = useState(false);
   const selectedModel = models.find(
     (model) => model.name === preselectedModel
   );
 
-  const category = selectedModel?.category;
-  const formConfig = (() => {
-    switch (category) {
-      case 'Flyer':
-        return {
-          nameLabel: 'Nome do(a) cantor(a)',
-          namePlaceholder: 'Ex: João, Maria, Banda XYZ',
-          event_time: true,
-          event_date: true,
-          locationLabel: 'Local',
-          showPhotoNote: true,
-        };
+  const category = selectedModel?.category ?? '';
+  const formConfig = getFormConfig(category);
 
-      case 'Restaurantes': // Case geral para modelos de alimentação 
-      case 'Hamburgueria':
-
-        return {
-          nameLabel: 'Nome do local',
-          namePlaceholder: 'Ex: Restaurante Gadioli',
-          locationLabel: 'Local',
-          social: true,
-          restaurante: true,
-        };
-
-      case 'Casamentos':
-        return {
-          nameLabel: 'Nome do Noivo e da Noiva',
-          namePlaceholder: 'Ex: João e Maria',
-          event_time: true,
-          event_date: true,
-          locationLabel: 'Local',
-        };
-
-      case 'Chá de fraldas':
-      case 'Mesversário':
-        return {
-          event_time: true,
-          event_date: true,
-          locationLabel: 'Local',
-        };
-
-      default:
-        return {
-          nameLabel: 'Nome do(a) Aniversariante',
-          namePlaceholder: 'Ex: Maria, João, José',
-          showAge: true,
-          event_time: true,
-          event_date: true,
-          locationLabel: 'Local do evento',
-        };
-    }
-  })();
 
   const handleCopy = async () => {
     const key = pixKey;

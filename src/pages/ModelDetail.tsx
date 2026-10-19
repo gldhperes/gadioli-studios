@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Check } from 'lucide-react';
 
+import { useLocation } from 'react-router-dom';
+import categoriesData from '../data/categories';
+import { getProductContent } from '../data/productContent';
+
 // Componentes
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -11,6 +15,9 @@ import OrderDrawer from '../components/OrderDrawer';
 import SEO from '../components/SEO';
 import StructuredData from '../components/StructuredData';
 import { SITE_CONFIG } from '../config/site';
+
+// Utils
+import { createSlug } from '../../src/util/createSlug';
 
 // Interfaces
 import type IModel from '../interfaces/IModel';
@@ -22,24 +29,99 @@ import models from '../data/models';
 import styles from './ModelDetail.module.css';
 
 
-
 export default function ModelDetail() {
   const { slug } = useParams();
   const [model, setModel] = useState<IModel | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  const location = useLocation();
+
+  const isCustom = location.pathname.startsWith('/personalizados/');
+
+  // const category = isCustom
+  //   ? categoriesData.Categories.find(
+  //     (item) => createSlug(item.name) === slug
+  //   )
+  //   : undefined;
+
+  // const firstImage = category?.images[0];
+
+  // const content = category
+  //   ? getProductContent(category.name, '')
+  //   : undefined;
+
+  // const price = category?.price;
+
+
+
   useEffect(() => {
-    const found = models.find((m) => m.slug === slug) ?? null;
+    if (isCustom) {
+      const selectedCategory = categoriesData.Categories.find((item) => createSlug(item.name) === slug);
 
+      if (!selectedCategory) {
+        setModel(null);
+        return;
+      }
+
+      const firstImage = selectedCategory.images[0];
+      const productContent = getProductContent(
+        selectedCategory.name,
+        ''
+      );
+
+      // const customModel: IModel = {
+      //   slug: createSlug(selectedCategory.name),
+      //   image_url: firstImage?.image ?? '',
+      //   name: `Modelo Personalizado - ${selectedCategory.name}`,
+      //   category: selectedCategory.name,
+      //   description: productContent.description,
+      //   longDescription: productContent.longDescription,
+      //   price: selectedCategory.price,
+      //   customization:
+      //     'Nome, data, horário e local, conforme as opções disponíveis para esta categoria.',
+      //   delivery_time:
+      //     'Entrega em até 2 dias úteis após confirmação do pagamento.',
+      // };
+      const customModel: IModel = {
+        slug: createSlug(selectedCategory.name),
+        image_url: firstImage?.image ?? '',
+        name: `Modelo Personalizado - ${selectedCategory.name}`,
+        category: selectedCategory.name,
+
+        // Descrição específica dos modelos personalizados
+        description: `Modelo personalizado da categoria ${selectedCategory.name}, com design adaptado aos dados do seu evento ou negócio.`,
+
+        longDescription:
+          'Este modelo é uma opção personalizada do Gadioli Studio. Após a compra, você poderá informar os dados necessários para a personalização, conforme as opções disponíveis para a categoria selecionada.',
+
+        // Valores fixos exclusivos para personalizados
+        price: 20,
+
+        customization:
+          'Personalização dos dados conforme a categoria, incluindo nome, data, horário, local ou informações do estabelecimento, quando aplicável.',
+
+        delivery_time:
+          'Entrega em até 5 dias úteis após a confirmação do pagamento e o envio de todas as informações necessárias.',
+
+        after_purchase:
+          'Após a compra, preencha o formulário com as informações necessárias para personalizar seu modelo e envie o comprovante de pagamento via Pix.',
+      };
+
+
+      setModel(customModel);
+      return;
+    }
+
+    const found = models.find((item) => item.slug === slug) ?? null;
     setModel(found);
+  }, [slug, isCustom]);
 
-  }, [slug]);
+
 
   const handleBuy = () => {
     if (!model) return;
     setDrawerOpen(true);
   };
-
 
 
   if (!model) {
@@ -159,9 +241,17 @@ export default function ModelDetail() {
   return (
     <div className={styles.wrapper}>
       <SEO
-        title={model.seo?.title || `${model.name} | Gadioli Studio`}
+        title={
+          isCustom
+            ? `Modelo Personalizado - ${model.category} | Gadioli Studio`
+            : model.seo?.title || `${model.name} | Gadioli Studio`
+        }
         description={model.seo?.description || model.description}
-        canonical={`/modelos/${model.slug}`}
+        canonical={
+          isCustom
+            ? `/personalizados/${slug}`
+            : `/modelos/${model.slug}`
+        }
         image={model.image_url}
       />
       <StructuredData data={productStructuredData} />

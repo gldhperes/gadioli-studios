@@ -124,9 +124,6 @@ const Categories: ICategory[] = [
         price: 15,
         bg: BGs[3]
     },
-
-
-
 ];
 
 export default {

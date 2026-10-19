@@ -15,6 +15,7 @@ import models from '../data/models.ts';
 
 // Style
 import styles from './Home.module.css';
+import CustomModel from '../components/sections/CustomModel.tsx';
 
 export default function Home() {
 
@@ -32,6 +33,7 @@ export default function Home() {
         <Hero />
         <Categories />
         <Gallery models={models} />
+        <CustomModel />
         <Process />
         <Testimonials />
         <FAQ />

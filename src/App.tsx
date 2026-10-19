@@ -26,17 +26,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/modelos" element={<Modelos />} />
 
-        <Route
-          path="/modelos/categoria/:categorySlug"
-          element={<Modelos />}
-        />
 
+        <Route path="/personalizados/:slug" element={<ModelDetail />} />
+        
         <Route path="/modelos/:slug" element={<ModelDetail />} />
+
         <Route path="*" element={<PageNotFound />} />
 
         <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
         <Route path="/termos-de-uso" element={<TermsOfUse />} />
-    
+
       </Routes>
     </Router>
 
