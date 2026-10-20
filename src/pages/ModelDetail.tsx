@@ -4,7 +4,7 @@ import { ArrowLeft, Check } from 'lucide-react';
 
 import { useLocation } from 'react-router-dom';
 import categoriesData from '../data/categories';
-import { getProductContent } from '../data/productContent';
+// import { getProductContent } from '../data/productContent';
 
 // Componentes
 import Header from '../components/Header';
