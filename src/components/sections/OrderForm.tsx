@@ -5,7 +5,7 @@ import pixImg from "../../assets/QRCode.png";
 
 // Datas
 import models from '../../data/models';
-import CategoriesNames from '../../data/categories';
+// import CategoriesNames from '../../data/categories';
 
 import { getFormConfig } from '../../config/formConfig';
 

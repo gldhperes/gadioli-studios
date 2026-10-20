@@ -64,10 +64,10 @@ export default function ModelDetail() {
       }
 
       const firstImage = selectedCategory.images[0];
-      const productContent = getProductContent(
-        selectedCategory.name,
-        ''
-      );
+      // const productContent = getProductContent(
+      //   selectedCategory.name,
+      //   ''
+      // );
 
       // const customModel: IModel = {
       //   slug: createSlug(selectedCategory.name),
