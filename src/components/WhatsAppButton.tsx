@@ -1,7 +1,9 @@
 import type { CSSProperties } from 'react';
 import { MessageCircle } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '5521997857619';
+import wppNumber from '../data/wppNumber';
+
+const WHATSAPP_NUMBER = wppNumber;
 const DEFAULT_MESSAGE = 'Olá, Gadioli Studio! Gostaria de tirar uma dúvida.';
 
 const styles = {

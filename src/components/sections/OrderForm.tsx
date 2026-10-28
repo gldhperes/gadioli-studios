@@ -3,7 +3,14 @@ import { Check, ChevronRight, ChevronLeft, Loader2, Copy } from 'lucide-react';
 import { useReveal } from '../../hooks/useReveal.ts';
 import styles from './OrderForm.module.css';
 import pixImg from "../../assets/QRCode.png";
+
+
+// Data
 import models from '../../data/models';
+import wppNumber from '../../data/wppNumber.ts';
+
+const WHATSAPP_NUMBER = wppNumber;
+
 
 interface OrderFormProps {
   preselectedModel?: string;
@@ -23,8 +30,9 @@ interface OrderFormData {
   notes: string;
 }
 
+
 export default function OrderForm({ preselectedModel }: OrderFormProps) {
-  const WHATSAPP_NUMBER = '5521997857619';
+ 
   const ref = useReveal();
   const pixKey = "7f3cb7fb-ea5b-437a-80d6-5850eeb170a3";
   const [step, setStep] = useState(0);
