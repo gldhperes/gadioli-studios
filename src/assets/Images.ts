@@ -153,7 +153,7 @@ export const ImagensChaDeFraldas = [
     {
         image: ChaDeFraldasMenina,
         name: "Chá de Fraldas menina",
-          isMain: true,
+        isMain: true,
     },
 ];
 
@@ -322,7 +322,7 @@ export const ImagensMesversario = [
     {
         image: MesversarioMenina,
         name: "Mesversário Menina",
-          isMain: true,
+        isMain: true,
     },
 ];
 
@@ -402,7 +402,6 @@ import HModelo3 from "./Hamburgueria/Modelo 3.png";
 import HModelo4 from "./Hamburgueria/Modelo 4.png";
 import HModelo5 from "./Hamburgueria/Modelo 5.png";
 
-
 export const ImagesHamburgueria = [
     {
         image: HModelo1,
@@ -412,24 +411,20 @@ export const ImagesHamburgueria = [
     {
         image: HModelo2,
         name: "Hamburgueria Modelo 2",
-
     },
     {
         image: HModelo3,
         name: "Hamburgueria Modelo 3",
-
     },
 
     {
         image: HModelo4,
         name: "Hamburgueria Modelo 4",
-
     },
 
     {
         image: HModelo5,
         name: "Hamburgueria Modelo 5",
-
     },
 ];
 
@@ -441,21 +436,56 @@ import PModelo1 from "./Pizzaria/Modelo 1.png";
 import PModelo2 from "./Pizzaria/Modelo 2.png";
 import PModelo3 from "./Pizzaria/Modelo 3.png";
 
-
 export const ImagePizzaria = [
     {
         image: PModelo1,
         name: "Pizzaria Modelo 1",
-  isMain: true,
+        isMain: true,
     },
     {
         image: PModelo2,
         name: "Pizzaria Modelo 2",
-
     },
     {
         image: PModelo3,
         name: "Pizzaria Modelo 3",
+    },
+];
 
+
+// ==============================
+// MODELO PERSONALIZADO
+// ==============================
+
+import ModeloPersonalizado from "./ModeloPersonalizado.png";
+
+export const ImageModeloPersonalizado = [
+    {
+        image: ModeloPersonalizado,
+        name: "Modelo Personalizado",
+    },
+]
+
+// ==============================
+// PASTELARIA
+// ==============================
+
+import PastelModelo1 from "./Pastelaria/Modelo 1.png";
+import PastelModelo2 from "./Pastelaria/Modelo 2.png";
+import PastelModelo3 from "./Pastelaria/Modelo 3.png";
+
+export const ImagePastelaria = [
+    {
+        image: PastelModelo1,
+        name: "Pastelaria Modelo 1",
+        isMain: true,
+    },
+    {
+        image: PastelModelo2,
+        name: "Pastelaria Modelo 2",
+    },
+    {
+        image: PastelModelo3,
+        name: "Pastelaria Modelo 3",
     },
 ];

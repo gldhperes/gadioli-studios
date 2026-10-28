@@ -24,6 +24,7 @@ import type IModel from '../interfaces/IModel';
 
 // Data
 import models from '../data/models';
+import { ImageModeloPersonalizado } from '../assets/Images.ts';
 
 // Style
 import styles from './ModelDetail.module.css';
@@ -38,22 +39,6 @@ export default function ModelDetail() {
 
   const isCustom = location.pathname.startsWith('/personalizados/');
 
-  // const category = isCustom
-  //   ? categoriesData.Categories.find(
-  //     (item) => createSlug(item.name) === slug
-  //   )
-  //   : undefined;
-
-  // const firstImage = category?.images[0];
-
-  // const content = category
-  //   ? getProductContent(category.name, '')
-  //   : undefined;
-
-  // const price = category?.price;
-
-
-
   useEffect(() => {
     if (isCustom) {
       const selectedCategory = categoriesData.Categories.find((item) => createSlug(item.name) === slug);
@@ -63,28 +48,11 @@ export default function ModelDetail() {
         return;
       }
 
-      const firstImage = selectedCategory.images[0];
-      // const productContent = getProductContent(
-      //   selectedCategory.name,
-      //   ''
-      // );
+      const firstImage = ImageModeloPersonalizado[0].image;
 
-      // const customModel: IModel = {
-      //   slug: createSlug(selectedCategory.name),
-      //   image_url: firstImage?.image ?? '',
-      //   name: `Modelo Personalizado - ${selectedCategory.name}`,
-      //   category: selectedCategory.name,
-      //   description: productContent.description,
-      //   longDescription: productContent.longDescription,
-      //   price: selectedCategory.price,
-      //   customization:
-      //     'Nome, data, horário e local, conforme as opções disponíveis para esta categoria.',
-      //   delivery_time:
-      //     'Entrega em até 2 dias úteis após confirmação do pagamento.',
-      // };
       const customModel: IModel = {
         slug: createSlug(selectedCategory.name),
-        image_url: firstImage?.image ?? '',
+        image_url: firstImage,
         name: `Modelo Personalizado - ${selectedCategory.name}`,
         category: selectedCategory.name,
 
@@ -200,11 +168,12 @@ export default function ModelDetail() {
 
       case 'Restaurantes':  // Case geral para modelos de alimentação 
       case 'Hamburgueria':
+      case 'Pastelaria':
+      case 'Pizzaria':
         return 'Nome do Estabelecimento, Endereço, Instagram';
 
       case 'Chá de fraldas':
       case 'Mesversário':
-
         return 'Data, Horário e Local.';
 
       case 'Casamentos':

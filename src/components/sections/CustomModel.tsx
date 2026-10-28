@@ -6,6 +6,7 @@ import { ChevronDown, ArrowRight } from 'lucide-react';
 import { createSlug } from '../../util/createSlug';
 
 // Data
+import { ImageModeloPersonalizado } from '../../assets/Images.ts';
 import { useReveal } from '../../hooks/useReveal';
 import categoriesData from '../../data/categories';
 import { getFormConfig } from '../../config/formConfig';
@@ -63,6 +64,12 @@ export default function CustomModel() {
             placeholder: 'Informe o local',
         },
         {
+            label: 'Descrição do modelo personalizado',
+            visible: true,
+            multiline: true,
+            placeholder: formConfig.customModelPlaceholder,
+        },
+        {
             label: 'Rede social',
             visible: Boolean(formConfig.social),
             placeholder: '@seuperfil',
@@ -98,7 +105,7 @@ export default function CustomModel() {
                     <div className={styles.preview}>
                         {previewImage ? (
                             <img
-                                src={previewImage.image}
+                                src={ImageModeloPersonalizado[0].image}
                                 alt={`Exemplo de convite: ${selectedCategory}`}
                                 className={styles.previewImage}
                             />
@@ -168,14 +175,25 @@ export default function CustomModel() {
                                         {field.label}
                                     </label>
 
-                                    <input
-                                        className={styles.input}
-                                        type="text"
-                                        placeholder={field.placeholder}
-                                        disabled
-                                        readOnly
-                                        tabIndex={-1}
-                                    />
+                                    {field.multiline ? (
+                                        <textarea
+                                            className={`${styles.input} ${styles.textarea}`}
+                                            placeholder={field.placeholder}
+                                            disabled
+                                            readOnly
+                                            tabIndex={-1}
+                                            rows={4}
+                                        />
+                                    ) : (
+                                        <input
+                                            className={styles.input}
+                                            type="text"
+                                            placeholder={field.placeholder}
+                                            disabled
+                                            readOnly
+                                            tabIndex={-1}
+                                        />
+                                    )}
                                 </div>
                             ))}
                         </div>
@@ -187,7 +205,7 @@ export default function CustomModel() {
                         )}
 
                         <Link to={`/personalizados/${createSlug(selectedCategory)}`} className={styles.submitButton}>
-                            Ver modelos personalizados
+                            Fazer modelo personalizado
                             <ArrowRight size={18} aria-hidden="true" />
                         </Link>
 

@@ -239,6 +239,13 @@
   transform: translateY(0);
 }
 
+.textarea {
+    min-height: 110px;
+    resize: none;
+    line-height: 1.6;
+    font-family: inherit;
+}
+
 /* Tablets */
 
 @media (max-width: 900px) {

@@ -15,6 +15,7 @@ import {
     ImagesTimeDeFutebol,
     ImagesHamburgueria,
     ImagePizzaria,
+    ImagePastelaria,
 
 } from "../assets/Images";
 
@@ -33,6 +34,7 @@ const CategoriesNames = {
     Times: "Times de Futebol",
     Hamburgueria: "Hamburgueria",
     Pizzaria: "Pizzaria",
+    Pastelaria:"Pastelaria",
 };
 
 const BGs = [
@@ -123,6 +125,13 @@ const Categories: ICategory[] = [
         icon: Trophy,
         price: 15,
         bg: BGs[3]
+    },
+     {
+        name: CategoriesNames.Pastelaria,
+        images: ImagePastelaria,
+        icon: Trophy,
+        price: 15,
+        bg: BGs[4]
     },
 ];
 

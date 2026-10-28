@@ -285,6 +285,22 @@ export const PRODUCT_CONTENT: Record<string, Record<string, ProductContent>> = {
             longDescription: 'A Pizzaria Modelo 3 organiza sabores e ofertas em uma peça de alto contraste, mantendo o foco no produto e no canal de pedido. É indicada para divulgar os mais pedidos e campanhas promocionais.',
         },
     },
+    'Pastelaria': {
+        'Pastelaria Modelo 1': {
+            description: 'Arte de divulgação para pastelaria com combos de pastéis e bebidas, preços em destaque e cardápio organizado para atrair pedidos.',
+            longDescription: 'A Pastelaria Modelo 1 apresenta diferentes combos de pastéis acompanhados de bebidas, com preços destacados e uma seção dedicada aos sabores disponíveis e adicionais. A composição utiliza tons de amarelo, vermelho e preto para criar uma identidade visual marcante e apetitosa. É ideal para divulgar promoções, apresentar opções do cardápio e facilitar a escolha dos clientes em redes sociais e canais de delivery.',
+        },
+
+        'Pastelaria Modelo 2': {
+            description: 'Arte promocional para pastelaria com pastéis crocantes em destaque, recheio generoso e identidade visual marcante para divulgação.',
+            longDescription: 'A Pastelaria Modelo 2 valoriza fotografias de pastéis dourados e recheados, combinadas com uma identidade visual em preto, amarelo e branco. Frases promocionais e elementos gráficos reforçam a qualidade dos produtos e despertam o apetite do público. É uma opção indicada para divulgar a marca, destacar os diferenciais da pastelaria e atrair clientes por meio de publicações e anúncios digitais.',
+        },
+
+        'Pastelaria Modelo 3': {
+            description: 'Arte de divulgação para pastelaria com pastéis recheados, lista de sabores e destaque para delivery, qualidade e variedade.',
+            longDescription: 'A Pastelaria Modelo 3 combina imagens apetitosas de pastéis com uma apresentação dos sabores disponíveis, destacando opções como carne, frango, queijo e pizza. A composição utiliza tons quentes de amarelo, preto e branco, além de elementos gráficos que reforçam a crocância, o recheio generoso e a qualidade dos produtos. O destaque para o delivery e a chamada para experimentar os pastéis tornam este modelo ideal para divulgar o estabelecimento, apresentar sua variedade e incentivar novos pedidos.',
+        },
+    },
 };
 
 const categoryFallback: ProductContent = {
