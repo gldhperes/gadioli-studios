@@ -5,7 +5,7 @@ import pixImg from "../../assets/QRCode.png";
 
 // Datas
 import models from '../../data/models';
-// import CategoriesNames from '../../data/categories';
+import wppNumber from '../../data/wppNumber.ts';
 
 import { getFormConfig } from '../../config/formConfig';
 
@@ -32,7 +32,7 @@ interface OrderFormData {
 }
 
 export default function OrderForm({ preselectedModel }: OrderFormProps) {
-  const WHATSAPP_NUMBER = '5521997857619';
+  const WHATSAPP_NUMBER = wppNumber;
   const ref = useReveal();
   const pixKey = "7f3cb7fb-ea5b-437a-80d6-5850eeb170a3";
   const [step, setStep] = useState(0);
