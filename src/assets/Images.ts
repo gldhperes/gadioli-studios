@@ -392,17 +392,119 @@ export const ImagesTimeDeFutebol = [
     },
 ];
 
+
+
+
+// // ==============================
+// // HAMBURGUERIA
+// // ==============================
+
+// import HModelo1 from "./Hamburgueria/Modelo 1.png";
+// import HModelo2 from "./Hamburgueria/Modelo 2.png";
+// import HModelo3 from "./Hamburgueria/Modelo 3.png";
+// import HModelo4 from "./Hamburgueria/Modelo 4.png";
+// import HModelo5 from "./Hamburgueria/Modelo 5.png";
+
+// export const ImagesHamburgueria = [
+//     {
+//         image: HModelo1,
+//         name: "Hamburgueria Modelo 1",
+//         isMain: true,
+//     },
+//     {
+//         image: HModelo2,
+//         name: "Hamburgueria Modelo 2",
+//     },
+//     {
+//         image: HModelo3,
+//         name: "Hamburgueria Modelo 3",
+//     },
+
+//     {
+//         image: HModelo4,
+//         name: "Hamburgueria Modelo 4",
+//     },
+
+//     {
+//         image: HModelo5,
+//         name: "Hamburgueria Modelo 5",
+//     },
+// ];
+
+// // ==============================
+// // PIZZARIA
+// // ==============================
+
+// import PModelo1 from "./Pizzaria/Modelo 1.png";
+// import PModelo2 from "./Pizzaria/Modelo 2.png";
+// import PModelo3 from "./Pizzaria/Modelo 3.png";
+
+// export const ImagePizzaria = [
+//     {
+//         image: PModelo1,
+//         name: "Pizzaria Modelo 1",
+//         isMain: true,
+//     },
+//     {
+//         image: PModelo2,
+//         name: "Pizzaria Modelo 2",
+//     },
+//     {
+//         image: PModelo3,
+//         name: "Pizzaria Modelo 3",
+//     },
+// ];
+
+
+
+// // ==============================
+// // PASTELARIA
+// // ==============================
+
+// import PastelModelo1 from "./Pastelaria/Modelo 1.png";
+// import PastelModelo2 from "./Pastelaria/Modelo 2.png";
+// import PastelModelo3 from "./Pastelaria/Modelo 3.png";
+
+// export const ImagePastelaria = [
+//     {
+//         image: PastelModelo1,
+//         name: "Pastelaria Modelo 1",
+//         isMain: true,
+//     },
+//     {
+//         image: PastelModelo2,
+//         name: "Pastelaria Modelo 2",
+//     },
+//     {
+//         image: PastelModelo3,
+//         name: "Pastelaria Modelo 3",
+//     },
+// ];
+
+
 // ==============================
-// HAMBURGUERIA
+// RESTAURANTES
 // ==============================
 
+// HAMBURGUER
 import HModelo1 from "./Hamburgueria/Modelo 1.png";
 import HModelo2 from "./Hamburgueria/Modelo 2.png";
 import HModelo3 from "./Hamburgueria/Modelo 3.png";
 import HModelo4 from "./Hamburgueria/Modelo 4.png";
 import HModelo5 from "./Hamburgueria/Modelo 5.png";
 
-export const ImagesHamburgueria = [
+// PIZZA
+import PModelo1 from "./Pizzaria/Modelo 1.png";
+import PModelo2 from "./Pizzaria/Modelo 2.png";
+import PModelo3 from "./Pizzaria/Modelo 3.png";
+
+// PASTAL
+import PastelModelo1 from "./Pastelaria/Modelo 1.png";
+import PastelModelo2 from "./Pastelaria/Modelo 2.png";
+import PastelModelo3 from "./Pastelaria/Modelo 3.png";
+
+export const ImagesRestaurantes = [
+    //HAMBURGUER
     {
         image: HModelo1,
         name: "Hamburgueria Modelo 1",
@@ -426,17 +528,8 @@ export const ImagesHamburgueria = [
         image: HModelo5,
         name: "Hamburgueria Modelo 5",
     },
-];
 
-// ==============================
-// PIZZARIA
-// ==============================
-
-import PModelo1 from "./Pizzaria/Modelo 1.png";
-import PModelo2 from "./Pizzaria/Modelo 2.png";
-import PModelo3 from "./Pizzaria/Modelo 3.png";
-
-export const ImagePizzaria = [
+    // PIZZA
     {
         image: PModelo1,
         name: "Pizzaria Modelo 1",
@@ -450,31 +543,8 @@ export const ImagePizzaria = [
         image: PModelo3,
         name: "Pizzaria Modelo 3",
     },
-];
 
-
-// ==============================
-// MODELO PERSONALIZADO
-// ==============================
-
-import ModeloPersonalizado from "./ModeloPersonalizado.png";
-
-export const ImageModeloPersonalizado = [
-    {
-        image: ModeloPersonalizado,
-        name: "Modelo Personalizado",
-    },
-]
-
-// ==============================
-// PASTELARIA
-// ==============================
-
-import PastelModelo1 from "./Pastelaria/Modelo 1.png";
-import PastelModelo2 from "./Pastelaria/Modelo 2.png";
-import PastelModelo3 from "./Pastelaria/Modelo 3.png";
-
-export const ImagePastelaria = [
+    // PASTEL
     {
         image: PastelModelo1,
         name: "Pastelaria Modelo 1",
@@ -489,3 +559,19 @@ export const ImagePastelaria = [
         name: "Pastelaria Modelo 3",
     },
 ];
+
+
+
+
+// ==============================
+// MODELO PERSONALIZADO
+// ==============================
+
+import ModeloPersonalizado from "./ModeloPersonalizado.png";
+
+export const ImageModeloPersonalizado = [
+    {
+        image: ModeloPersonalizado,
+        name: "Modelo Personalizado",
+    },
+]

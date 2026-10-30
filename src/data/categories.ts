@@ -13,9 +13,10 @@ import {
     ImagesInfantil,
     ImagensMesversario,
     ImagesTimeDeFutebol,
-    ImagesHamburgueria,
-    ImagePizzaria,
-    ImagePastelaria,
+    // ImagesHamburgueria,
+    // ImagePizzaria,
+    // ImagePastelaria,
+    ImagesRestaurantes,
 
 } from "../assets/Images";
 
@@ -32,9 +33,10 @@ const CategoriesNames = {
     Infantil: "Infantil",
     Mesversario: "Mesversário",
     Times: "Times de Futebol",
-    Hamburgueria: "Hamburgueria",
-    Pizzaria: "Pizzaria",
-    Pastelaria:"Pastelaria",
+    // Hamburgueria: "Hamburgueria",
+    // Pizzaria: "Pizzaria",
+    // Pastelaria:"Pastelaria",
+    Restaurantes:"Restaurantes",
 };
 
 const BGs = [
@@ -111,28 +113,38 @@ const Categories: ICategory[] = [
         bg: BGs[1]
     },
 
-    {
-        name: CategoriesNames.Hamburgueria,
-        images: ImagesHamburgueria,
+    // {
+    //     name: CategoriesNames.Hamburgueria,
+    //     images: ImagesHamburgueria,
+    //     icon: Trophy,
+    //     price: 15,
+    //     bg: BGs[2]
+    // },
+
+    // {
+    //     name: CategoriesNames.Pizzaria,
+    //     images: ImagePizzaria,
+    //     icon: Trophy,
+    //     price: 15,
+    //     bg: BGs[3]
+    // },
+    //  {
+    //     name: CategoriesNames.Pastelaria,
+    //     images: ImagePastelaria,
+    //     icon: Trophy,
+    //     price: 15,
+    //     bg: BGs[4]
+    // },
+
+     {
+        name: CategoriesNames.Restaurantes,
+        images: ImagesRestaurantes,
         icon: Trophy,
         price: 15,
         bg: BGs[2]
     },
 
-    {
-        name: CategoriesNames.Pizzaria,
-        images: ImagePizzaria,
-        icon: Trophy,
-        price: 15,
-        bg: BGs[3]
-    },
-     {
-        name: CategoriesNames.Pastelaria,
-        images: ImagePastelaria,
-        icon: Trophy,
-        price: 15,
-        bg: BGs[4]
-    },
+   
 ];
 
 export default {
